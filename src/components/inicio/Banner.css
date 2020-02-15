@@ -1,0 +1,75 @@
+.banner{
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background: #F5F5F5;
+    background-size: cover;
+    background-position: bottom;
+    transition: all .1s ease-in-out;
+    background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80');
+    animation: banner 20s infinite linear;
+}
+
+.banner_content{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffff;
+    background-color: rgba(0, 34, 61, 0.6);
+    display: flex;
+    flex-direction: column; /*las 3 ultimas lineas son para que el contenido del div quede en el centro*/
+    justify-content: center;
+    align-items: center;
+}
+
+.banner_content h1 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+    Text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+
+.banner_content p {
+    font-family: "Open Sans", sans-serif;
+    padding-bottom: 25px;
+    font-size: 14px;
+}
+
+.button_banner{
+    color: #ffff;
+    padding: 9px 20px;
+    border: 1px solid #ffff;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+}
+
+.button_banner:hover{
+    color: #333;
+    background: #ffff;
+}
+
+@keyframes banner{
+    0%{
+        background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80');
+    }
+    50%{
+        background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80');
+    }
+    
+    51%{
+        background-image: url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+        background-position: unset;
+    }
+    100%{
+        background-image: url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+        background-position: bottom;
+    }
+
+}

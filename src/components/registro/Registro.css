@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+
+.container_registrer {
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 30px;
+    margin-bottom: -5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form_registrer{
+    width: 55%;
+    display: inline-block;
+    text-align: justify;
+    text-justify: inter-word;
+    vertical-align:top;
+}
+
+.background{
+    width: 45%;
+    display: inline-block;
+    vertical-align:top;
+}
+
+.img_background{
+    position: relative;
+    margin-left: -80px;
+}
+
+.form h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    margin-bottom:5px;
+    line-height: normal;
+    color: rgb(75, 75, 75);
+}
+
+.form h5{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 26px;
+    color: #eea73b;
+    border-bottom: 1px solid #ccc;
+}
+
+.form p{
+    color: #555;
+    font-weight: 500;
+    font-size: 17px;
+    margin-left: 5px;
+}
+
+.row_form{
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.form_half{
+    width: 50%;
+    display: inline-block;
+}
+
+.input_half{
+    width: 80%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0 15px;
+    color: #719ECE;
+    font-weight: 700;
+}
+
+.input_half:focus {
+    outline: none !important;
+    border:1px solid #1963c4;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.input_complete{
+    width: 70%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0 15px;
+    color: #719ECE;
+    font-weight: 700;
+}
+
+.input_complete:focus {
+    outline: none !important;
+    border:1px solid #1963c4;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.tipo_documento{
+    width: 80%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0 15px;
+    color: #719ECE;
+    font-weight: 700;
+}
+
+.tipo_documento:focus {
+    outline: none !important;
+    border:1px solid #1963c4;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.button_search{
+    margin-top: 10px;
+    width: 90%;
+    height: 45px;
+    color: #ffffff;
+    background: #1963c4;
+    border: 0px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+::placeholder { 
+    color: rgb(167, 167, 167);
+    font-weight: 600;
+}

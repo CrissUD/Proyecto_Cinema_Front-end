@@ -1,0 +1,39 @@
+.main_features{
+    padding: 0px 0;
+    text-align: center;
+    background-color: #5782b7;
+    color: #94b6df;
+    margin-bottom: 30px;
+}
+
+.container_features {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row_features {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.columna_fearures{
+    width: 24%;
+    display: inline-block;
+    border-right: 1px dotted #94b6df;
+}
+
+.col_fin{
+    border: none;
+}
+
+.columna_fearures h3{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 2;
+    text-transform: uppercase;
+    color: #94b6df;
+}

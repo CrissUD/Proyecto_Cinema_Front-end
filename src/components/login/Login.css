@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+.contenedor{
+    position: relative;
+    width: 100%;
+    height: 693px;
+    background: #F5F5F5;
+    background-size: cover;
+    background-position: bottom;
+    margin-top: 0px;
+    transition: all .1s ease-in-out;
+    background-image: url("https://images.unsplash.com/photo-1567462305195-f8e788ff2940?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1424&q=80");
+    animation: login 40s infinite linear;
+}
+
+.cubierta{
+    width: 100%;
+    height: 693px;
+    position: absolute;
+    background:#fff;
+    z-index: 1;
+    animation: login_cubierta 40s infinite linear;
+}
+
+.login{
+    z-index: 2;
+    position: absolute;
+    left: 80px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.formulario{
+    width: 340px;
+    height: 520px;
+    background: #fff;
+    margin-top: 65px;
+    padding: 30px 40px;
+    border-radius: 20px;
+}
+
+.login h1{
+    font-size: 35px;
+    margin-bottom: 70px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+
+.texto{
+    position: relative;
+    margin: 30px 0;
+    margin-left: 20px;
+    width: 90%;
+    z-index: 1;
+}
+
+.texto input{
+    font-size: 15px;
+    color: #1963c4;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 2px solid #adadad;
+    padding: 0 5px;
+    height: 40px;
+    width: 90%;
+    padding: 0 15px;
+    font-weight: 500;
+}
+
+.texto input:focus{
+    border-bottom: 2px solid #1963c4;
+    box-shadow:  0px 8px 6px -5px  #719ECE;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.tipo_usuario{
+    margin-top: 10px;
+    width: 80%;
+    height: 35px;
+    border-radius: 8px;
+    padding: 0 15px;
+    color: #666;
+    font-weight: 700;
+}
+
+.tipo_usuario:focus {
+    outline: none !important;
+    border:1px solid #1963c4;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+
+.boton{
+    display: block;
+    background: linear-gradient(to right, #1963c4,#94b6df,#1963c4);
+    background-size: 200%;
+    color:white;
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    margin-top: 60px;
+}
+
+.boton:hover{
+    background-position: right;
+}
+
+.nueva_cuenta{
+    color: #7b7b7b;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.link{
+    color: #1963c4;
+}
+
+@keyframes login{
+    0%{
+        background-image: url("https://images.unsplash.com/photo-1567462305195-f8e788ff2940?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1424&q=80");
+    }
+    25%{
+        background-image: url("https://images.unsplash.com/photo-1567462305195-f8e788ff2940?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1424&q=80");
+        background-position: unset;
+    }
+    26%{
+        background-image: url("https://images.unsplash.com/photo-1569035560433-6113350a78a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80");
+        background-position: unset;
+    }
+    50%{
+        background-image: url("https://images.unsplash.com/photo-1569035560433-6113350a78a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80");
+        background-position: bottom;
+    }
+    51%{
+        background-image: url("../../resources/img/cinema3.png");
+        background-position: bottom;
+    }
+    75%{
+        background-image: url("../../resources/img/cinema3.png");
+        background-position: unset;
+    }
+    
+    76%{
+        background-image: url("../../resources/img/cinema.png");
+        background-position: unset;
+    }
+    100%{
+        background-image: url("../../resources/img/cinema.png");
+        background-position: bottom;
+    }
+}
+
+@keyframes login_cubierta{
+    0%{
+        background: #fff;
+    }
+    4%{
+        background:none;
+    }
+    22%{
+        background:none
+    }
+    25%{
+        background: #fff;
+    }
+    26%{
+        background: #fff;
+    }
+    30%{
+        background: none;
+    }
+    47%{
+        background: none;
+    }
+    50%{
+        background: #fff;
+    }
+    51%{
+        background: #fff;
+    }
+    55%{
+        background: none;
+    }
+    72%{
+        background: none;
+    }
+    75%{
+        background: #fff;
+    }
+    76%{
+        background: #fff;
+    }
+    80%{
+        background: none;
+    }
+    97%{
+        background: none;
+    }
+    100%{
+        background: #fff;
+    }
+}

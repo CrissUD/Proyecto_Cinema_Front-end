@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.info{
+    margin-bottom: 40px;
+}
+
+.info_user{
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.img_user{
+    width: 48%;
+    display: inline-block;
+    padding-right: 30px;
+
+}
+
+.img_user_square{
+    width: 70%;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.info_user h2{
+    margin-top: 40px;
+    margin-bottom: 5px;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: 'Bree Serif', serif;
+    color: #303030;
+}
+
+.info_user h4{
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 5px;
+    line-height: 1.9;
+    font-size: 20px;
+    color: #7c7c7c;
+}
+
+.info_user p{
+    color: #575757;
+}
+
+.btn_points_history{
+    background: #3B7EEB;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.btn_points_history:hover{
+    background: rgb(35, 95, 190);
+}
+
+.btn_history{
+    background: #4f4f4f;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+
+}
+.btn_history:hover{
+    background: #353535
+}
+
+.img_btn{
+    width: 35px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+.header_info{
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.column_perfil{
+    margin-top: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.info_person{
+    width: 68%;
+    border-right: 1px solid #e6e6e6;
+    padding-left: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.estadist_person{
+    width: 28%;
+    padding-left: 20px;
+}
+
+.column_perfil h5{
+    font-size: 20px;
+    letter-spacing: 0.15rem;
+    color: #3B7EEB;
+    border-left: 7px solid #3B7EEB;
+    padding-left: 30px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.p_title{
+    font-weight: bold;
+    color: #303030;
+    font-family: 'Bree Serif', serif;
+}
+
+.p_info_half{
+    color: #575757;
+}
+
+.p_info_complete{
+    color: #575757;
+}
+
+.estadist_person{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.points{
+    width: 90%;
+    border: 2px solid #eea73b;
+    border-radius: 20px;
+    height: 30px;
+}
+
+.p_points{
+    color: #7c7c7c;
+    margin-top: 2px;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.estadistics_section{
+    margin-bottom: 30px;
+}
+
+.header_info p{
+    color: #575757;
+}
+
+.header_info h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 100;
+    line-height: 1.2;
+    font-family: 'Bree Serif', serif;
+    color: #303030;
+    text-align: justify;
+    text-justify: inter-word;
+    border-left: 7px solid #3B7EEB;
+    padding-left: 20px;
+}

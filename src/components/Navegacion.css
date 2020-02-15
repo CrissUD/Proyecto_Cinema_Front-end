@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap');
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 2px solid #e7e7e7;
+    border-top: none;
+    margin: 0;
+    border-left: none;
+    border-right: none;
+}
+
+.container {
+    padding-right: 130px;
+    padding-left: 130px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.topbar {
+    text-align: right;
+    padding-top: 0px;
+    margin-bottom: 5px;
+}
+
+.topbar .top-nav,
+.topbar .searchbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.topbar .top-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.li_nav {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+.top_nav_link{
+    padding-left: 15px;
+    font-family: "Open Sans", sans-serif;
+    padding-top: 0px;
+    background: none;
+    text-decoration: none; /* quita el subrrayado del link*/
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+}
+
+.label_main_nav{
+    position: relative;
+    top: -2px;
+    background-color: #1963c4;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.img_btn_log{
+    vertical-align: middle;
+    margin-top: -1px;
+    width: 30px;
+    height: 30px;
+}
+
+.btn_log{
+    vertical-align: middle;
+    background: none;
+    color: #777;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: none;
+    font-size: 14px;
+}
+.top_nav_link:hover{ /* evento de paso de mouse*/
+    color: rgb(26, 26, 26);
+}
+.btn_log:hover{ /* evento de paso de mouse*/
+    color: rgb(26, 26, 26);
+}
+
+.search_box{
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.text_search {
+    font-family: inherit;
+    height: 21px;
+    padding: 6px 12px;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.input_btn{
+    vertical-align: middle;
+}
+
+.btn_search{
+    margin-left: -3px;
+    height: 35px;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-top-right-radius: 2px;
+    border-color: #ccc;
+}
+
+.img_btn_search{
+    vertical-align: middle;
+    width: 17px;
+    height: 17px;
+}
+
+.header{
+    display: table;
+    clear: both;
+}
+
+.logo_text{
+    vertical-align: middle;
+    display: inline-block;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 40px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #1963c4;
+}
+
+.img_logo{
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.encabezado{
+    font-family: inherit;
+}
+
+.main_nav{
+    position: relative;
+    margin-top: -70px;
+    padding-left: 290px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+
+.nav_link{
+    margin-left: 15px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    padding-top: 0px;
+    background: none;
+    text-decoration: none; /* quita el subrrayado del link*/
+    text-align: center;
+    color: #656565;
+    font-size: 14px;
+}
+
+.nav_link:hover{ /* evento de paso de mouse*/
+    color: #1963c4;
+}
