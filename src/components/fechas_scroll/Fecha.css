@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+.button_date_div{
+    display: table-cell;
+    border-collapse:separate;
+    max-width: 1%;
+    height: 75px;
+}
+
+.button_date{
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+    background: #3f3f3f;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+}
+
+.button_date:focus{
+    background: #71a0da;
+    outline: none;
+}
+
+.date_name p{
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 3px;
+}
+
+.date_number p{
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 3px;
+}
+
+.date_month p{
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 3px;
+}

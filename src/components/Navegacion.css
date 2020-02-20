@@ -133,7 +133,8 @@
 }
 
 .header{
-    display: table;
+    display: inline-block;
+    width: 35%;
     clear: both;
 }
 
@@ -158,15 +159,16 @@
 }
 
 .main_nav{
-    position: relative;
-    margin-top: -70px;
-    padding-left: 290px;
-    margin-left: 100px;
-    margin-bottom: 30px;
+    display: inline-block;
+    width: 65%;
 }
 
+.nav{
+    margin-top: 30px;
+    padding-left: 0;
+}
 .nav_link{
-    margin-left: 15px;
+    margin-left: 10px;
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     padding-top: 0px;
@@ -174,7 +176,7 @@
     text-decoration: none; /* quita el subrrayado del link*/
     text-align: center;
     color: #656565;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .nav_link:hover{ /* evento de paso de mouse*/

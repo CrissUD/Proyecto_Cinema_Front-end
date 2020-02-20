@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.header_billboard{
+    text-align: justify;
+    text-justify: inter-word;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header_billboard h1{
+    font-family: 'Quicksand', sans-serif;
+    color: #777777;
+    font-weight: bold;
+    font-size: 40px;
+}

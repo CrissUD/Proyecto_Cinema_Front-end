@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.middle{
+    margin: 40px 20px;
+}
+
+.menu{
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.item{
+    border-top: 1px solid #3f9edd;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.btn{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    padding-top: 30px;
+    background: #71a0da;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: #76a6e0;
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #71a0da;
+    left: 20px;
+    bottom: -7px;
+    transform: rotate(45deg);
+}
+
+.theater_img{
+    margin-right: 20px;
+    width: 17%;
+    height: 45px;
+    vertical-align: middle;
+}
+
+.submenu{
+    background: #3f3f3f;
+    margin: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.8s;
+}
+
+.btn_submenu{
+    display: block;
+    position: relative;
+    padding: 16px 26px;
+    color: #ffffff;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.btn_submenu::before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #71a0da;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    opacity: 0;
+}
+
+.btn_submenu:hover::before{
+    opacity: 1;
+}
+
+.menu input{
+    display: none;
+}
+
+.menu input:checked ~ .submenu{
+    max-height: 500px; 
+}

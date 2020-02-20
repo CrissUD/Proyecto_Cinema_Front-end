@@ -9,6 +9,7 @@ import Registro from './components/registro/Registro';
 import NavUsuario from './components/navegacion_usuario/NavUsuario';
 import Perfil from './components/perfil/Perfil';
 import Cartelera from './components/cartelera/Cartelera';
+import DescripcionPelicula from './components/descripcion_pelicula/DescripcionPelicula'
 
 class App extends Component {
 
@@ -85,6 +86,18 @@ class App extends Component {
                 <Navegacion
                 />
                 <Cartelera
+                />
+                <PiePagina 
+                />
+              </div>
+            )}}
+          />
+          <Route path='/DescripcionPelicula' render={ () => {
+            return (
+              <div>
+                <Navegacion
+                />
+                <DescripcionPelicula
                 />
                 <PiePagina 
                 />

@@ -1,0 +1,14 @@
+.time_movie{
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.time_movie h2{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.date_times_values{
+    padding: 10px 20px;
+}

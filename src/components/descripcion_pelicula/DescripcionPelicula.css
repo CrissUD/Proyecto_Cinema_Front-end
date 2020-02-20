@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.movie_info_stadistics{
+    width: 27%;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    border-right: 1px solid #e6e6e6;
+}
+
+.movie_info_detals{
+    width: 67%;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 40px;
+}
+
+.img_movie_desc{
+    width: 80%;
+}
+
+.movie_general_info h2{
+    font-family: 'Bree Serif', serif;
+    color: #71a0da;
+    margin: 5px;
+}
+
+.movie_general_info p{
+    color: #797979;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 5px;
+    text-decoration: underline;
+}
+
+.movie_ranking{
+    color: #797979;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+.stars_ranking {
+    margin-top: 20px;
+    width: 50%;
+    display: inline-block;
+}
+
+.imbd_ranking{
+    width: 50%;
+    display: inline-block;
+}
+
+.ranking_img{
+    vertical-align: middle;
+    margin: 10px;
+    margin-right: 20px;
+}
+
+.more_info_img{
+    width: 15%;
+    margin-bottom: 0;
+}
+
+.info_title{
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 50px;
+    color: #eea73b;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.info_text{
+    color: #797979;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 50px;
+}
+
+.movie_sumary h1{
+    font-family: 'Bree Serif', serif;
+    color: #71a0da;
+    font-size: 38px;
+}
+
+.movie_info_detals{
+    padding-right: 30px;
+}
+.movie_info_detals h3{
+    color: #1963c4;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 24px;
+}
+
+.movie_sumary p{
+    text-align: justify;
+    text-justify: inter-word;
+    color: #797979;
+}
+
+.movie_casting p{
+    text-align: justify;
+    text-justify: inter-word;
+    color: #797979;
+}
+
+.scroll_dates{
+    overflow: hidden;
+}

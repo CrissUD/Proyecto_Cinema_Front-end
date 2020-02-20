@@ -1,0 +1,14 @@
+.schedule{
+    display: inline-block;
+    margin: 5px;
+}
+
+.button_shedule{
+    border: none;
+    border-radius: 8px;
+    background: #eea73b;
+    color: #ffffff;
+    font-weight: bold;
+    height: 40px;
+    cursor: pointer;
+}
