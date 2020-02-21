@@ -15,7 +15,7 @@ export default class HorariosMenu extends Component {
                         </label>
                         <div className="submenu">
                             <div className="btn_submenu">
-                                <SubMenu/>
+                                <SubMenu panel={this.props.panel} panelBackground={this.props.panelBackground}/>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ export default class HorariosMenu extends Component {
                         </label>
                         <div className="submenu">
                             <div className="btn_submenu">
-                                <SubMenu/>
+                                <SubMenu panel={this.props.panel} panelBackground={this.props.panelBackground}/>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ export default class HorariosMenu extends Component {
                         </label>
                         <div className="submenu">
                             <div className="btn_submenu">
-                                <SubMenu/>
+                                <SubMenu panel={this.props.panel} panelBackground={this.props.panelBackground}/>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ export default class HorariosMenu extends Component {
                         </label>
                         <div className="submenu">
                             <div className="btn_submenu">
-                                <SubMenu/>
+                                <SubMenu panel={this.props.panel} panelBackground={this.props.panelBackground}/>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ export default class HorariosMenu extends Component {
                         </label>
                         <div className="submenu">
                             <div className="btn_submenu">
-                                <SubMenu/>
+                                <SubMenu panel={this.props.panel} panelBackground={this.props.panelBackground}/>
                             </div>
                         </div>
                     </div>

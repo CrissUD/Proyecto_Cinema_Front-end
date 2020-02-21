@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './Horario.css'
+import './Horario.css';
 
 export default class Horario extends Component {
+
+    movePanelConfirmation = () =>{
+        this.props.panel.current.classList.toggle('active');
+        this.props.panelBackground.current.classList.toggle('active');
+    }
+
     render() {
         return (
             <div className="schedule">
-                <Link className="btn_schedule" to="/CompraBoletas">
-                    <button className="button_shedule">
+                    <button className="button_shedule" onClick={this.movePanelConfirmation}>
                         <p>{'10:00 AM'}</p>
                     </button>
-                </Link>
             </div>
         )
     }

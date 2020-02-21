@@ -9,31 +9,31 @@ export default class Horarios extends Component {
                 <div className="time_movie">
                     <h2>2D Doblada</h2>
                     <div className="date_times_values"> 
-                        <Horario />
-                        <Horario />
-                        <Horario/>
-                        <Horario/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
                     </div>
                 </div>
                 <div className="time_movie">
                     <h2>2D Subtitulada</h2>
                     <div className="date_times_values"> 
-                        <Horario/>
-                        <Horario/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
                     </div>
                 </div>
                 <div className="time_movie">
                     <h2>3D Doblada</h2>
                     <div className="date_times_values"> 
-                        <Horario/>
-                        <Horario/>
-                        <Horario/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
                     </div>
                 </div>
                 <div className="time_movie">
                     <h2>3D Subtitulada</h2>
                     <div className="date_times_values"> 
-                        <Horario/>
+                        <Horario panel={this.props.panel} panelBackground={this.props.panelBackground}/>
                     </div>
                 </div>
             </div>

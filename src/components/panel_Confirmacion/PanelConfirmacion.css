@@ -1,0 +1,114 @@
+.panel_complete{
+    height: 100%;
+}
+
+.panel_background{
+    background: #3f3f3f77;
+    z-index: 400;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:-100%;
+    left: 0;
+    transition: all 200ms linear;
+}
+
+.panel_background.active{
+    top: 0;
+}
+
+#panel_confirmation{
+    background: #3f3f3f;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    border-top: 5px solid #71a0da;
+    width: 100%;
+    height: 300px;
+    z-index: 500;
+    transition: all 500ms linear;
+    bottom: -305px;
+    left: 0px;
+}
+
+#panel_confirmation.active{
+    bottom: 0px;
+}
+
+.info_confirmations{
+    width: 30%;
+    display: inline-block;
+    padding-top: 20px;
+    margin: 30px 10px;
+}
+
+.bpanel{
+    border-right: 1px dotted #ffffff;
+}
+
+.panel_confirmation h1{
+    color: #ffffff;
+    text-align: center;
+}
+
+.panel_confirmation h3 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.panel_confirmation h5{
+    padding-top: 10px;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    margin: 10px auto;
+    width: 100px;
+    height: 30px;
+}
+
+.btn_confirmation{
+    text-decoration: none;
+}
+
+.button_confirmation{
+    background: #eea73b;
+    border: none;
+    border-radius: 20px;
+    width: 40%;
+    height: 40px;
+    display: block;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.button_confirmation:hover{
+    background: #ffa115;
+}
+
+.button_confirmation:focus{
+    outline: none !important;
+}
+
+.button_cancel{
+    background:transparent;
+    border: 1px solid #eea73b;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 40%;
+    height: 40px;
+    display: block;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 20px auto;
+}
+
+.button_cancel:hover{
+    background: #333;
+}
+
+.button_cancel:focus{
+    outline: none !important;
+}

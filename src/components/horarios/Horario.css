@@ -16,3 +16,7 @@
 .button_shedule:hover{
     background: #f59609;
 }
+
+.button_shedule:focus{
+    outline: none !important;
+}

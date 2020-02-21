@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import FechasScroll from '../fechas_scroll/FechasScroll';
-import Horarios from '../horarios/HorariosMenu'
+import Horarios from '../horarios/HorariosMenu';
+import PanelConfirmacion from '../panel_Confirmacion/PanelConfirmacion'
 import './DescripcionPelicula.css';
 
 export default class DescripcionPelicula extends Component {
+
+    constructor(){
+        super()
+        this.panel = React.createRef(); //create ref
+        this.panelBackground= React.createRef();
+    }
+
     render() {
         return (
             <div className="container">
@@ -60,9 +68,13 @@ export default class DescripcionPelicula extends Component {
                     <div className="scroll_dates">
                         <FechasScroll/>
                     </div>
-                    <div className="movie_timetable">
-                        <Horarios/>
+                    <div className="confirmation">
+                        <PanelConfirmacion panel={this.panel} panelBackground={this.panelBackground}/>
                     </div>
+                    <div className="movie_timetable">
+                        <Horarios panel={this.panel} panelBackground={this.panelBackground}/>
+                    </div>
+                    
                 </div>
             </div>
         )

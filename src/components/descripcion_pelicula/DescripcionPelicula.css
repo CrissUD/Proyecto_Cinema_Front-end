@@ -90,7 +90,15 @@
 .movie_info_detals{
     padding-right: 30px;
 }
-.movie_info_detals h3{
+
+.movie_sumary h3{
+    color: #1963c4;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 24px;
+}
+
+.movie_casting h3{
     color: #1963c4;
     text-align: justify;
     text-justify: inter-word;
