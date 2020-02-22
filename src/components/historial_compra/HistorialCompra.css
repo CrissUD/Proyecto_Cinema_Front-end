@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.history_buy{
+    margin: 60px auto;
+}
+
+.history_header{
+    margin-bottom: 80px;
+}
+
+.history_header h1{
+    font-family: 'Bree Serif', serif;
+    color: #eea73b;
+}
+
+.button_section{
+    background: transparent;
+    width: 80px;
+    height: 80px;
+    border: none;
+    cursor: pointer;
+    margin: 5px auto;
+    transition: all .5s;
+}
+
+.history_img{
+    width: 40px;
+}
+
+.section_history h2{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+#h1, #h2, #h3, #h4, #h5{
+    color: #666;
+}
+
+.border_history{
+    border-left: 4px solid #666;
+    height:100px;
+    margin-left: 28%;
+}
+
+#button_selection3{
+    margin-left: 20px;
+}
+
+#button_selection4{
+    margin-left: 20px;
+}
+
+.active{
+    background-color: #eea73b;
+    border-radius: 100%;
+}
+
+.border_active{
+    border-left: 4px solid #eea73b;
+}

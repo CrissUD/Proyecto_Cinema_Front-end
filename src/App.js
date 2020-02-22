@@ -9,7 +9,8 @@ import Registro from './components/registro/Registro';
 import NavUsuario from './components/navegacion_usuario/NavUsuario';
 import Perfil from './components/perfil/Perfil';
 import Cartelera from './components/cartelera/Cartelera';
-import DescripcionPelicula from './components/descripcion_pelicula/DescripcionPelicula'
+import DescripcionPelicula from './components/descripcion_pelicula/DescripcionPelicula';
+import CantidadBoletas from './components/cantidad_boletas/CantidadBoletas'
 
 class App extends Component {
 
@@ -104,8 +105,19 @@ class App extends Component {
               </div>
             )}}
           />
+          <Route path='/CompraBoletas' render={ () => {
+            return (
+              <div>
+                <Navegacion
+                />
+                <CantidadBoletas
+                />
+                <PiePagina 
+                />
+              </div>
+            )}}
+          />
         </Router>
-        
       </div>
     );
   }
