@@ -1,0 +1,106 @@
+.summary_content{
+    width: 60%;
+    margin: 60px 40px;
+    display: inline-block;
+    border-right: 1px solid #c0c0c0;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.summary_content h2{
+    color: #1963c4;
+    font-size: 28px;
+}
+
+.summary_content h4{
+    color: #71a0da;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.summary_content p{
+    color: #444;
+}
+
+.summary_header, .summary_movie, .summary_function,
+.summary_theater, .summary_tickets, .summary_chairs,
+.summary_food, .summary_total{
+    margin: 40px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ticket_name, .ticket_numbner, .ticket_cost{
+    display: inline-block;
+    width: 30%;
+}
+
+.ticket_numbner{
+    text-align: center;
+}
+
+.ticket_cost p{
+    text-align: right;
+}
+
+.chair_name img{
+    width: 60px;
+    margin-bottom: 0px;
+}
+
+.chair_name, .chair_number, .chair_code{
+    display: inline-block;
+    width: 30%;
+}
+
+.chair_number{
+    text-align: center;
+}
+
+.chair_code p{
+    text-align: right;
+}
+
+.total_title{
+    display: inline-block;
+    width: 50%;
+}
+.total_numer{
+    display: inline-block;
+    width: 40%;
+}
+
+.total_numer h4{
+    text-align: right;
+}
+
+.button_sumary_confirm{
+    margin: 40px auto;
+}
+
+.btn_sumary_confirm{
+    width: 70%;
+    height: 50px;
+    background: linear-gradient(to right, #71a0da,#1963c4,#71a0da);
+    background-size: 200%;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    transition: .5s;
+    cursor: pointer;
+    margin: 20px 60px;
+}
+
+.btn_sumary_confirm.active{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn_sumary_confirm:hover{
+    background-position: right;
+}
+
+
+.btn_sumary_confirm:focus{
+    outline: none !important;
+}

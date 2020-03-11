@@ -149,7 +149,7 @@ export default class CantidadBoletas extends Component {
                     </div>
                 </div>
                 <div className="buy_history">
-                    <HistoriaCompra/>
+                    <HistoriaCompra estado={1}/>
                 </div>
             </div>
         )

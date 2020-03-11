@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.chairs_selection{
+    width: 70%;
+    margin: 60px 10px;
+    display: inline-block;
+    border-right: 1px solid #c0c0c0;
+}
+
+.chairs_selection_content{
+    margin: 30px 160px;
+    padding: 40px 20px;
+    border: 2px solid #71a0da;
+    border-radius: 12px;
+}
+
+.separator{
+    height: 20px;
+    border-top: 1px dashed #c0c0c0;
+}
+
+.screen{
+    background-color: #444;
+    color: #ffffff;
+    height: 40px;
+    margin: 30px;
+}
+
+.screen p{
+    padding-top: 10px;
+    vertical-align: middle;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.chairs_convention{
+    margin: 30px 60px;
+    padding: 20px 0px;
+    border: 2px solid #71a0da;
+    border-radius: 12px;
+}
+
+.chair_convention_panel{
+    width: 30%;
+    display: inline-block;
+    margin: 40px 10px;
+}
+
+.chair_convention_general{
+    margin-bottom: 30px;
+}
+
+.chair_convention_content_img{
+    display: inline-block;
+    margin-right: 0px;
+    width: 30%;
+}
+
+.chair_convention_content_text{
+    display: inline-block;
+    width: 70%;
+}
+
+.chair_convention_panel h3{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.chair_img_conv{
+    width: 70%;
+}
+
+.button_chair_confirm{
+    margin: 40px auto;
+}
+
+.btn_chair_confirm{
+    width: 70%;
+    height: 50px;
+    background: linear-gradient(to right, #71a0da,#1963c4,#71a0da);
+    background-size: 200%;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.btn_chair_confirm.active{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn_chair_confirm:hover{
+    background-position: right;
+}
+
+
+.btn_chair_confirm:focus{
+    outline: none !important;
+}

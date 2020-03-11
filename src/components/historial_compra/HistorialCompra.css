@@ -24,6 +24,10 @@
     transition: all .5s;
 }
 
+.button_section:focus{
+    outline: none !important;
+}
+
 .history_img{
     width: 40px;
 }
@@ -55,7 +59,7 @@
     margin-left: 20px;
 }
 
-.active{
+.active_button{
     background-color: #eea73b;
     border-radius: 100%;
 }

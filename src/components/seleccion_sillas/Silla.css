@@ -1,0 +1,25 @@
+.chair{
+    display: inline-block;
+    margin: 8px 10px;
+    cursor: pointer;
+}
+
+.btn_chair_img{
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.btn_chair_img:focus{
+    outline: none;
+}
+
+.chair_img{
+    width: 70%;
+}
+
+.chair_code p{
+    margin: 0 auto;
+}

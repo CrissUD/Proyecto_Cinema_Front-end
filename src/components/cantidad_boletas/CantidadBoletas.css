@@ -5,14 +5,17 @@
     width: 70%;
     margin: 60px 10px;
     display: inline-block;
+    border-right: 1px solid #c0c0c0;
+
 }
 
 .tickets_header {
     font-family: 'Bree Serif', serif;
     font-size: 25px;
     margin-top: 0px;
+    margin-left: 60px;
     margin-bottom: 50px;
-    color: #1963c4;
+    color: #71a0da;
     text-align: justify;
     text-justify: inter-word;
 }
@@ -41,7 +44,7 @@
     height: 40px;
     padding: 0 40px;
     padding-top: 20px;
-    background: #eb3d3d;
+    background: linear-gradient(to right, #71a0da,#1963c4,#71a0da);
     background-size: 200%;
     color: #ffffff;
     font-weight: bold;
@@ -65,8 +68,8 @@
     margin-top: 60px;
     width: 80%;
     height: 40px;
-    border: 2px solid #eb3d3d;
-    color: #eb3d3d;
+    border: 2px solid #71a0da;
+    color: #71a0da;
     font-weight: bold;
     font-family: 'Quicksand', sans-serif;
     font-size: 17px;
@@ -115,7 +118,7 @@
     margin: 0 63px;
     overflow: hidden;
     max-height: 200px;
-    border: 2px solid #eb3d3d;
+    border: 2px solid #71a0da;
     border-top: none;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -216,10 +219,8 @@
 
 .buy_history{
     width: 25%;
-    max-height: 100%;
+    height: 100%;
     display: inline-block;
     vertical-align: top;
-    border-left: 1px solid #c0c0c0;
-
     margin-top: 80px;
 }

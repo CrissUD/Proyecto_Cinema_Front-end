@@ -10,7 +10,9 @@ import NavUsuario from './components/navegacion_usuario/NavUsuario';
 import Perfil from './components/perfil/Perfil';
 import Cartelera from './components/cartelera/Cartelera';
 import DescripcionPelicula from './components/descripcion_pelicula/DescripcionPelicula';
-import CantidadBoletas from './components/cantidad_boletas/CantidadBoletas'
+import CantidadBoletas from './components/cantidad_boletas/CantidadBoletas';
+import SeleccionSillas from './components/seleccion_sillas/SeleccionSillas';
+import ResumenCompra from './components/resumen_compra/ResumenCompra'
 
 class App extends Component {
 
@@ -111,6 +113,30 @@ class App extends Component {
                 <Navegacion
                 />
                 <CantidadBoletas
+                />
+                <PiePagina 
+                />
+              </div>
+            )}}
+          />
+          <Route path='/EscogerAsientos' render={ () => {
+            return (
+              <div>
+                <Navegacion
+                />
+                <SeleccionSillas
+                />
+                <PiePagina 
+                />
+              </div>
+            )}}
+          />
+          <Route path='/ResumenCompra' render={ () => {
+            return (
+              <div>
+                <Navegacion
+                />
+                <ResumenCompra
                 />
                 <PiePagina 
                 />

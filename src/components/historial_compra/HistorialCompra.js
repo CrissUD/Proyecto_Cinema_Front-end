@@ -4,12 +4,12 @@ import './HistorialCompra.css';
 export default class HistorialCompra extends Component {
 
     state = {
-        fase_compra: 1
+        fase_compra: this.props.estado
     }
 
     componentDidMount(){
         for(var i=1; i<=this.state.fase_compra; i++){
-            document.getElementById('button_selection'+i).classList.toggle('active');
+            document.getElementById('button_selection'+i).classList.toggle('active_button');
             document.getElementById('h'+i).style.color='#eea73b';
             document.getElementById('history_img'+i).src= require("../../resources/img/imagen_blanco"+i+".png")
             if(document.getElementById('border'+(i-1)))
