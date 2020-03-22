@@ -104,7 +104,7 @@
 }
 
 .chair_content{
-    margin: 0 65px;
+    margin: 0 6.3%;
     overflow: hidden;
     max-height: 0;
     border: 2px solid #c0c0c0;
@@ -222,5 +222,148 @@
     height: 100%;
     display: inline-block;
     vertical-align: top;
-    margin-top: 80px;
+    margin-top: 80px ;
+}
+
+@media(max-width:600px){
+    .buy_history{
+        width: 98%;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .chair_panel h2{
+        font-size: 18px;
+    }
+    
+    .buy_tickets{
+        width: 90%;
+        display: block;
+        margin: 60px auto;
+        border-right: none;
+    }
+
+    .chair_content, .chair_content_total{
+        margin: 0 2.1%;
+    }
+}
+
+@media (min-width: 600px) and (max-width:650px) {  
+
+    .buy_history{
+        width: 90%;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .buy_tickets{
+        width: 90%;
+        display: block;
+        margin: 60px auto;
+        border-right: none;
+    }
+
+    .chair_panel h2{
+        font-size: 18px;
+    }
+
+    .chair_content, .chair_content_total{
+        margin: 0 2.8%;
+    }
+}
+
+@media (min-width: 650px) and (max-width:700px) {  
+
+    .buy_history{
+        width: 90%;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .buy_tickets{
+        width: 90%;
+        display: block;
+        margin: 60px auto;
+        border-right: none;
+    }
+
+    .chair_panel h2{
+        font-size: 20px;
+    }
+
+    .chair_content, .chair_content_total{
+        margin: 0 3.5%;
+    }
+}
+
+@media (min-width: 700px) and (max-width:800px) {  
+
+    .buy_history{
+        width: 90%;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .buy_tickets{
+        width: 90%;
+        display: block;
+        margin: 60px auto;
+        border-right: none;
+    }
+
+    .chair_panel h2{
+        font-size: 22px;
+    }
+
+    .chair_content, .chair_content_total{
+        margin: 0 4.2%;
+    }
+}
+
+
+@media (min-width: 800px) and (max-width:900px) {  
+
+    .buy_history{
+        width: 90%;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .buy_tickets{
+        width: 90%;
+        display: block;
+        margin: 60px auto;
+        border-right: none;
+    }
+
+    .chair_content, .chair_content_total{
+        margin: 0 4.9%;
+    }
+}
+
+@media (min-width: 900px) and (max-width:1000px) {  
+    .chair_content, .chair_content_total{
+        margin: 0 4%;
+    }
+    .chair_panel h2{
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width:1100px) {  
+    .chair_content, .chair_content_total{
+        margin: 0 4.6%;
+    }
+}
+
+@media (min-width: 1100px) and (max-width:1270px) {  
+    .chair_content, .chair_content_total{
+        margin: 0 5.2%;
+    }
+}
+
+@media (min-width: 1270px) and (max-width:1400px) {  
+    .chair_content, .chair_content_total{
+        margin: 0 5.8%;
+    }
 }

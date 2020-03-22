@@ -2,6 +2,28 @@ import React, { Component } from 'react'
 import './Registro.css'
 
 export default class Registro extends Component {
+
+    subirImagenUsuario = (event) =>{
+        const previewContainer = document.getElementById("image_preview");
+        const previewImage = previewContainer.querySelector(".image_preview_image");
+        const previewDefaultText = previewContainer.querySelector(".span_preview");
+        const file= event.target.files[0]
+        if (file){
+            const reader = new FileReader();
+            previewDefaultText.style.display = "none";
+            previewImage.style.display = "block";
+            reader.addEventListener("load", function() {
+                previewImage.setAttribute("src", this.result)
+            });
+            reader.readAsDataURL(file);
+        }
+        else{
+            previewDefaultText.style.display = null;
+            previewImage.style.display = null;
+            previewImage.setAttribute("src", "")
+        }
+    }
+
     render() {
         return (
             <div className="registrer">
@@ -58,6 +80,20 @@ export default class Registro extends Component {
                                     <div className="form_half">
                                         <p>Clave de Usuario</p>
                                         <input type="password" className="input_half" placeholder="Ingresecontraseña"/>
+                                    </div>
+                                </div>
+                                <div className="image_user">
+                                    <p>Suba la imagen de perfil</p>
+                                    <input type="file" 
+                                           name="inpFile" 
+                                           id="inpFile" 
+                                           className="inpFile" 
+                                           onChange={this.subirImagenUsuario}/>
+                                    <div className="image_preview" id="image_preview">
+                                        <img className="image_preview_image" src="" alt="img_preview"/>
+                                        <span className="span_preview">
+                                            Previa de Imagen
+                                        </span>
                                     </div>
                                 </div>
                                 <div className="button_form">

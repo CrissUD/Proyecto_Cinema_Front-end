@@ -8,7 +8,7 @@
 }
 
 .chairs_selection_content{
-    margin: 30px 160px;
+    margin: 30px 80px;
     padding: 40px 20px;
     border: 2px solid #71a0da;
     border-radius: 12px;
@@ -99,4 +99,52 @@
 
 .btn_chair_confirm:focus{
     outline: none !important;
+}
+
+@media(max-width:900px){
+    .chairs_selection{
+        width: 98%;
+        display: block;
+        border-right: none;
+    }
+
+    .chairs_selection_content{
+        margin: 30px 30px;
+    }
+
+    .chairs_convention{
+        margin: 30px 30px;
+    }
+
+    .chair_convention_panel{
+        width: 98%;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .chair_convention_general, .chair_convention_vip{
+        width: 50%;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 900px) and (max-width:1050px) {
+    .chairs_selection_content{
+        margin: 30px 30px;
+    }
+
+    .chairs_convention{
+        margin: 30px 30px;
+    }
+
+    .chair_convention_panel{
+        width: 98%;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .chair_convention_general, .chair_convention_vip{
+        width: 50%;
+        display: inline-block;
+    } 
 }

@@ -35,24 +35,36 @@ export default class DescripcionPelicula extends Component {
                         </div>
                     </div>
                     <div className="movie_more_info">
-                        <img className="more_info_img" src={require("../../resources/img/direccion.png")}  alt="direct_img"/>
-                        <p className= "info_title">Director:</p>
-                        <p className= "info_text">Director Pelicula</p>
-                        <img className="more_info_img" src={require("../../resources/img/calendario.png")}  alt="calendary_img"/>
-                        <p className= "info_title">Fecha estreno:</p>
-                        <p className= "info_text">20/01/2020</p>
-                        <img className="more_info_img" src={require("../../resources/img/ubicacion.png")}  alt="country_img"/>
-                        <p className= "info_title">Pais Origen:</p>
-                        <p className= "info_text">Pais Pelicula</p>
-                        <img className="more_info_img" src={require("../../resources/img/reloj.png")}  alt="clock_img"/>
-                        <p className= "info_title">Duracion:</p>
-                        <p className= "info_text">120 minutos</p>
-                        <img className="more_info_img" src={require("../../resources/img/idiomas.png")}  alt="lenguaje_img"/>
-                        <p className= "info_title">Idiomas:</p>
-                        <p className= "info_text">Ingles, Español, Subtitulado</p>
-                        <img className="more_info_img" src={require("../../resources/img/carrete.png")}  alt="carret_img"/>
-                        <p className= "info_title">Proyeccion:</p>
-                        <p className= "info_text">2D / 3D / Imax</p>
+                        <div className="more_info_div">
+                            <img className="more_info_img" src={require("../../resources/img/direccion.png")}  alt="direct_img"/>
+                            <p className= "info_title">Director:</p>
+                            <p className= "info_text">Director Pelicula</p>
+                        </div>
+                        <div className="more_info_div">
+                            <img className="more_info_img" src={require("../../resources/img/calendario.png")}  alt="calendary_img"/>
+                            <p className= "info_title">Fecha estreno:</p>
+                            <p className= "info_text">20/01/2020</p>
+                        </div>
+                        <div className="more_info_div">
+                            <img className="more_info_img" src={require("../../resources/img/ubicacion.png")}  alt="country_img"/>
+                            <p className= "info_title">Pais Origen:</p>
+                            <p className= "info_text">Pais Pelicula</p>
+                        </div>
+                        <div className="more_info_div">
+                            <img className="more_info_img" src={require("../../resources/img/reloj.png")}  alt="clock_img"/>
+                            <p className= "info_title">Duracion:</p>
+                            <p className= "info_text">120 minutos</p>
+                        </div>
+                        <div className="more_info_div">
+                            <img className="more_info_img" src={require("../../resources/img/idiomas.png")}  alt="lenguaje_img"/>
+                            <p className= "info_title">Idiomas:</p>
+                            <p className= "info_text">Ingles, Español, Subtitulado</p>
+                        </div>
+                        <div className="more_info_div">
+                            <img className="more_info_img" src={require("../../resources/img/carrete.png")}  alt="carret_img"/>
+                            <p className= "info_title">Proyeccion:</p>
+                            <p className= "info_text">2D / 3D / Imax</p>
+                        </div>
                     </div>
                 </div>
                 <div className="movie_info_detals">

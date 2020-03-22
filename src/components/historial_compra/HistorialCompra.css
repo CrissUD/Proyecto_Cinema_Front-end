@@ -48,16 +48,9 @@
 .border_history{
     border-left: 4px solid #666;
     height:100px;
-    margin-left: 28%;
+    margin-left: 25%;
 }
 
-#button_selection3{
-    margin-left: 20px;
-}
-
-#button_selection4{
-    margin-left: 20px;
-}
 
 .active_button{
     background-color: #eea73b;
@@ -66,4 +59,35 @@
 
 .border_active{
     border-left: 4px solid #eea73b;
+}
+
+@media(max-width:900px){
+    .section_history{
+        width: 18%;
+        display: inline-block;
+    }
+
+    .button_section{
+        margin-left: 30%;
+    }
+
+    .border_history{
+        display: none;
+    }
+
+}
+
+@media (min-width: 900px) and (max-width:1300px) {  
+    .border_history{
+        margin-left: 50%;
+    }
+    .button_section{
+        display: block;
+    }  
+}
+
+@media (min-width: 1300px) and (max-width:1400px) {  
+    .border_history{
+        margin-left: 22%;
+    }
 }

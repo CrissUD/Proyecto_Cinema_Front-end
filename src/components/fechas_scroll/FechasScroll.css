@@ -53,3 +53,9 @@
 .button_right:focus{
     outline: none !important;
 }
+
+@media(max-width:1100px){
+    .button_left{
+        margin-left: -60px;
+    }
+}

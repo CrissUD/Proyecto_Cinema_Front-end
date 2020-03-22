@@ -3,23 +3,28 @@ import { Link } from 'react-router-dom';
 import './Navegacion.css'
 
 export default class Navegacion extends Component {
+
+    moveMenu = () =>{
+        document.getElementById('nav').classList.toggle('active');
+    }
+
     render() {
         return (
             <nav className="navbar">
                 <div className="container">
                     <div className="topbar">
                         <ul className="top-nav">
-                            <li className="li_nav">
+                            <li className="li_nav1">
                             <Link className="btn_log" to="/Login">
                                 <img className="img_btn_log" src="https://img.icons8.com/bubbles/50/000000/user-male.png" alt="user"/>
                                 Iniciar sesion
                             </Link>
                             </li>
-                            <li className="li_nav">
+                            <li className="li_nav1">
                                 <Link className="top_nav_link" to="/Registro">Registrate
                                 </Link>
                             </li>
-                            <li className="li_nav">
+                            <li className="li_nav1">
                                 <Link className="top_nav_link" to="/Ayuda">Ayuda</Link>
                             </li>
                         </ul>
@@ -37,7 +42,10 @@ export default class Navegacion extends Component {
                         <h1 className="logo_text">Cine Distrito</h1>
                     </div>
                     <div className="main_nav">
-                        <ul className="nav">
+                        <div className="menu_btn">
+                            <span onClick={this.moveMenu}>&#9776;</span>
+                        </div>
+                        <ul id="nav" className="nav">
                             <li className="encabezado li_nav">
                                 <Link className="nav_link" to="/Inicio">
                                     INICIO

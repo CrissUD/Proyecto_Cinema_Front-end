@@ -88,7 +88,7 @@
 }
 
 .movie_info_detals{
-    padding-right: 30px;
+    padding-right: 10px;
 }
 
 .movie_sumary h3{
@@ -119,4 +119,44 @@
 
 .scroll_dates{
     overflow: hidden;
+}
+
+@media(max-width:785px){
+    .movie_info_stadistics{
+        width: 90%;
+        display: block;
+        margin: 20px auto;
+        border-right:  none;
+    }
+    .movie_info_detals{
+        width: 90%;
+        margin: 5px auto;
+    }
+
+    .more_info_div{
+        width: 30%;
+        display: inline-block;
+    }
+
+    .more_info_img{
+        width: 35%;
+    }
+
+    .movie_sumary h1{
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 800px) and (max-width:1055px) {  
+    .movie_info_stadistics{
+        width: 25%;
+        display: inline-block;
+        margin-right: 10px;
+        border-right: 1px solid #e6e6e6;
+    }
+    
+    .movie_info_detals{
+        width: 67%;
+        display: inline-block;
+    }
 }

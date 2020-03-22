@@ -112,3 +112,20 @@
 .button_cancel:focus{
     outline: none !important;
 }
+
+@media(max-width:700px){
+    .panel_confirmation h1{
+        font-size: 15px;
+    }
+
+    .panel_confirmation h3{
+        font-size: 12px;
+    }
+
+    .info_confirmations{
+        width: 29%;
+    }
+    .button_confirmation, .button_cancel{
+        font-size: 11px;
+    }
+}

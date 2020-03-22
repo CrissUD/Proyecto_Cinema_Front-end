@@ -43,3 +43,9 @@
     color: #ffffff;
     margin: 3px;
 }
+
+@media(max-width:700px){
+    .button_date{
+        width: 105%;
+    }
+}

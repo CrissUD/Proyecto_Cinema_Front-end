@@ -104,3 +104,11 @@
 .btn_sumary_confirm:focus{
     outline: none !important;
 }
+
+@media(max-width:900px){
+    .summary_content{
+        width: 90%;
+        display: block;
+        border-right: none;
+    }
+}

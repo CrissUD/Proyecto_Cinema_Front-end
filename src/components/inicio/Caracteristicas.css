@@ -37,3 +37,20 @@
     text-transform: uppercase;
     color: #94b6df;
 }
+
+
+@media(max-width:700px){
+    .columna_fearures h3{
+        font-size: 11px;
+    }
+
+    .img_feature{
+        width: 45%;
+    }
+}
+
+@media (min-width: 695px) and (max-width:1000px) {
+    .columna_fearures h3{
+        font-size: 14px;
+    }
+}

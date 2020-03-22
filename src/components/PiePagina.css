@@ -14,8 +14,8 @@ footer .container{
 }
 
 .row {
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -10px;
+    margin-left: -10px;
 }
 
 .info_cine {
@@ -48,8 +48,6 @@ footer .container{
 .logo{
     display: table;
     clear: both;
-    
-
 }
 
 .logo_text2{
@@ -183,4 +181,51 @@ footer .container{
     padding: 15px 0;
     background-color: #323232;
     font-size: 12px;
+}
+
+
+@media(max-width:800px){
+    .row {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .info_cine , .enlaces , .redes{
+        width: 90%;
+    }
+
+    .logo{
+        display: block;
+    }
+
+    .row h3{
+        margin: 5px 90px auto;
+    }
+    
+    .list_enl{
+        padding-left: 30%;
+    }
+
+    .lis_red{
+        margin-left: -15%;
+    }
+}
+
+
+@media (min-width: 780px) and (max-width:1200px) {
+    .info_cine , .enlaces , .redes{
+        width: 45%;
+    }
+
+    .logo{
+        display: block;
+    }
+
+    .row h3{
+        margin: 5px 90px auto;
+    }
+
+    .list_enl{
+        padding-left: 30%;
+    }
 }

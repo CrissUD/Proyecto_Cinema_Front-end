@@ -73,3 +73,15 @@
     }
 
 }
+
+@media(max-width:800px){
+    .banner_content h1 {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 795px) and (max-width:1200px) {
+    .banner_content h1 {
+        font-size: 40px;
+    }
+}

@@ -14,6 +14,7 @@ export default class CantidadBoletas extends Component {
     updateTotal = async () =>{
         await this.setState({total: (this.state.num_chair_general*10000)+(this.state.num_chair_vip*16000)})
     }
+    
     downChairGeneral = async () =>{
         if(this.state.num_chair_general > 0)
             await this.setState({num_chair_general: this.state.num_chair_general-1})

@@ -28,14 +28,14 @@ export default class HistorialCompra extends Component {
                         <button id="button_selection1" className="button_section">
                             <img id="history_img1" className="history_img" src={require("../../resources/img/boleto_gris.png")}  alt="ticket_img"/>
                         </button>
-                        <h2 id="h1" >Compra de Boletas</h2>
+                        <h2 id="h1" >Compra de las Boletas</h2>
                         <div id="border1" className="border_history"></div>
                     </div>
                     <div className="section_history">
                         <button id="button_selection2" className="button_section">
                             <img id="history_img2" className="history_img" src={require("../../resources/img/silla_gris.png")}  alt="chair_h_img"/>
                         </button>
-                        <h2 id="h2">Seleccion de Sillas</h2>
+                        <h2 id="h2">Seleccion de Asientos</h2>
                         <div id="border2" className="border_history"></div>
                     </div>
                     <div className="section_history">
@@ -56,7 +56,7 @@ export default class HistorialCompra extends Component {
                         <button id="button_selection5" className="button_section">
                             <img id="history_img5" className="history_img" src={require("../../resources/img/compra_gris.png")}  alt="buy_h_img"/>
                         </button>
-                        <h2 id="h5">Seleccion de Pago</h2>
+                        <h2 id="h5">Seleccion de Targeta</h2>
                         
                     </div>
                 </div>

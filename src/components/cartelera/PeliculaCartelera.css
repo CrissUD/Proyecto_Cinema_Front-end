@@ -75,3 +75,24 @@
 .desc_movie:hover .movie_cover{
     transform: translateY(0%);
 }
+
+
+@media(max-width:620px){
+    .desc_movie{
+        width: 90%;
+        display: block;
+    }
+}
+
+@media (min-width: 615px) and (max-width:800px) {   
+    .desc_movie{
+        width: 45%;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 795px) and (max-width:1200px) {   
+    .desc_movie{
+        width: 30%;
+    }
+}

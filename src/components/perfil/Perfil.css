@@ -17,7 +17,6 @@
     width: 48%;
     display: inline-block;
     padding-right: 30px;
-
 }
 
 .img_user_square{
@@ -169,4 +168,119 @@
     text-justify: inter-word;
     border-left: 7px solid #3B7EEB;
     padding-left: 20px;
+}
+
+@media(max-width:700px){
+    .info_user{
+        width: 90%;
+        display: block;
+        margin: 5px auto;
+    }
+    
+    .img_user{
+        width: 90%;
+        display: block;
+    }
+
+    .btn_points_history{
+        padding: 12px 10px;
+        margin-right: 9%;
+        margin-left: 10%;
+        font-size: 12px;
+    }
+        
+    .btn_history{
+        padding: 12px 10px;   
+        font-size: 12px; 
+    }
+
+    .info_person{
+        border: none;
+    }
+
+    .info_person{
+        width: 90%;
+        border: none;
+        padding-left: 0px;
+        text-align: center;
+    }
+    
+    .estadist_person{
+        width: 90%;
+    }
+}
+
+@media (min-width: 695px) and (max-width:880px) {   
+    .info_user{
+        width: 90%;
+        display: block;
+        margin: 5px auto;
+    }
+    
+    .img_user{
+        width: 90%;
+        display: block;
+    }
+
+    .btn_points_history{
+        padding: 12px 13x;
+        margin-right: 9%;
+        margin-left: 15%;
+        font-size: 13px;
+    }
+        
+    .btn_history{
+        padding: 12px 13px;   
+        font-size: 13px; 
+    }
+
+    .info_person{
+        border: none;
+    }
+
+    .info_person{
+        width: 90%;
+        border: none;
+        padding-left: 0px;
+        text-align: center;
+    }
+    
+    .estadist_person{
+        width: 90%;
+    }
+}
+
+@media (min-width: 875px) and (max-width:1100px) {  
+    .info_user h2{
+        font-size: 2.8rem;
+    }
+
+    .img_user{
+        padding-right: 0px;
+    }
+
+    .img_user_square{
+        width: 80%;
+    }
+
+    .btn_points_history{
+        padding: 12px 10px;
+        margin-right: 9%;
+        font-size: 12px;
+    }
+        
+    .btn_history{
+        padding: 12px 10px;   
+        font-size: 12px; 
+    }
+
+    
+    .info_person{
+        width: 55%;
+        border-right: 1px solid #e6e6e6;
+    }
+
+    .estadist_person{
+        width: 35%;
+    }
 }
