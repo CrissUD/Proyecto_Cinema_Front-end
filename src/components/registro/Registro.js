@@ -36,6 +36,17 @@ export default class Registro extends Component {
         })
         .then(response => { 
             alert(response.data.message)
+            document.getElementById('input1').value='';
+            document.getElementById('input2').value='';
+            document.getElementById('input3').value='';
+            document.getElementById('input4').value='';
+            document.getElementById('input5').value='';
+            document.getElementById('input6').value='';
+            document.getElementById('input7').value='';
+            document.getElementById('nombre_usuario').value='';
+            document.getElementById("image_preview").querySelector(".image_preview_image").style.display = null;
+            document.getElementById("image_preview").querySelector(".span_preview").style.display = null;
+            document.getElementById("image_preview").querySelector(".image_preview_image").setAttribute("src", "")
         })
         .catch(error => {
             alert(error.response.data.message)
@@ -65,7 +76,7 @@ export default class Registro extends Component {
         nombreUsuario.value= event.target.value
         this.setState({pk_numero_identificacion: event.target.value})
     }
-
+    
     subirImagenUsuario = (event) =>{
         var self=this;
         const previewContainer = document.getElementById("image_preview");
@@ -101,11 +112,25 @@ export default class Registro extends Component {
                                 <div className="row_form">
                                     <div className="form_half">
                                         <p>Nombres</p>
-                                        <input name="v_primernombre" type="text" className="input_half" placeholder="Ingrese nombres" onChange={this.onChange}/>
+                                        <input 
+                                            id="input1"
+                                            name="v_primernombre" 
+                                            type="text" 
+                                            className="input_half" 
+                                            placeholder="Ingrese nombres" 
+                                            onChange={this.onChange}
+                                        />
                                     </div>
                                     <div className="form_half">
                                         <p>Apellidos</p>
-                                        <input name="v_primerapellido" type="text" className="input_half" placeholder="Ingrese apellidos" onChange={this.onChange}/>
+                                        <input 
+                                            id="input2"
+                                            name="v_primerapellido" 
+                                            type="text" 
+                                            className="input_half" 
+                                            placeholder="Ingrese apellidos" 
+                                            onChange={this.onChange}
+                                        />
                                     </div>
                                 </div>
                                 <div className="row_form">
@@ -119,41 +144,83 @@ export default class Registro extends Component {
                                     </div>
                                     <div className="form_half">
                                         <p>Numero Documento</p>
-                                        <input type="text" className="input_half" placeholder="Ingrese numero de documento" onChange={this.crearNombreUsuario} />
+                                        <input 
+                                            id="input3"
+                                            type="text" 
+                                            className="input_half" 
+                                            placeholder="Ingrese numero de documento" 
+                                            onChange={this.crearNombreUsuario} 
+                                        />
                                     </div>
                                 </div>
                                 <div className="email_form">
                                     <p>Correo Electronico</p>
-                                    <input name="v_correo_electronico" type="email" className="input_complete" placeholder="Ingrese email" onChange={this.onChange}/>
+                                    <input 
+                                        id="input4"
+                                        name="v_correo_electronico" 
+                                        type="email" 
+                                        className="input_complete" 
+                                        placeholder="Ingrese email" 
+                                        onChange={this.onChange}
+                                    />
                                 </div>
                                 <div className="row_form">
                                     <div className="form_half">
                                         <p>Numero de Telefono</p>
-                                        <input name="i_telefono" type="text" className="input_half" placeholder="Ingrese numero telefonico" onChange={this.onChange}/>
+                                        <input 
+                                            id="input5"
+                                            name="i_telefono" 
+                                            type="text" 
+                                            className="input_half" 
+                                            placeholder="Ingrese numero telefonico" 
+                                            onChange={this.onChange}
+                                        />
                                     </div>
                                     <div className="form_half">
                                         <p>Direccion de Residencia</p>
-                                        <input name="v_direccion" type="text" className="input_half" placeholder="Ingrese direccion" onChange={this.onChange}/>
+                                        <input 
+                                            id="input6" 
+                                            name="v_direccion" 
+                                            type="text" 
+                                            className="input_half" 
+                                            placeholder="Ingrese direccion" 
+                                            onChange={this.onChange}
+                                        />
                                     </div>
                                 </div>
                                 <h5>Ingresa tus datos de Usuario</h5>
                                 <div className="row_form">
                                     <div className="form_half">
                                         <p>Nombre de Usuario</p>
-                                        <input id="nombre_usuario" type="text" className="input_half" placeholder="Ingrese nombre usuario" readOnly/>
+                                        <input 
+                                            id="nombre_usuario" 
+                                            type="text" 
+                                            className="input_half" 
+                                            placeholder="Ingrese nombre usuario" 
+                                            readOnly
+                                        />
                                     </div>
                                     <div className="form_half">
                                         <p>Clave de Usuario</p>
-                                        <input name="v_pass" type="password" className="input_half" placeholder="Ingresecontraseña" onChange={this.onChange}/>
+                                        <input 
+                                            id="input7" 
+                                            name="v_pass" 
+                                            type="password" 
+                                            className="input_half" 
+                                            placeholder="Ingresecontraseña" 
+                                            onChange={this.onChange}
+                                        />
                                     </div>
                                 </div>
                                 <div className="image_user">
                                     <p>Suba la imagen de perfil</p>
-                                    <input type="file" 
-                                           name="inpFile" 
-                                           id="inpFile" 
-                                           className="inpFile" 
-                                           onChange={this.subirImagenUsuario}/>
+                                    <input 
+                                        type="file" 
+                                        name="inpFile" 
+                                        id="inpFile" 
+                                        className="inpFile" 
+                                        onChange={this.subirImagenUsuario}
+                                    />
                                     <div className="image_preview" id="image_preview">
                                         <img className="image_preview_image" src="" alt="img_preview"/>
                                         <span className="span_preview">

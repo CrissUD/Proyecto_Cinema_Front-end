@@ -13,14 +13,33 @@ import DescripcionPelicula from './components/descripcion_pelicula/DescripcionPe
 import CantidadBoletas from './components/cantidad_boletas/CantidadBoletas';
 import SeleccionSillas from './components/seleccion_sillas/SeleccionSillas';
 import ResumenCompra from './components/resumen_compra/ResumenCompra'
+import axios from 'axios';
 
 class App extends Component {
 
   state= {
     login: false,
+    consulta: true,
+    list_movies: [],
     persona: {},
     cliente: {}
   }
+  
+  async componentDidMount() {
+    console.log(this.state.consulta)
+    if(this.state.consulta){
+        console.log('paso aqui')
+        axios.get('http://localhost:8888/peliculas')
+        .then(response => { 
+            this.setState({list_movies: response.data, consulta:false})
+            console.log(this.state.list_movies.data)
+        })
+        .catch(error => {
+            alert(error.response.data.message)
+        });   
+    }
+  }
+
 
   obtenerDatosUsuarioIngresado = async (persona, cliente) =>{
       await this.setState({persona: persona, cliente: cliente, login: true});
@@ -73,7 +92,7 @@ class App extends Component {
               <div>
                 <Navegacion
                 />
-                <Registro
+                <Registro 
                 />
                 <PiePagina 
                 />
@@ -85,8 +104,7 @@ class App extends Component {
               <div>
                 <Navegacion
                 />
-                <Perfil
-                />
+                {this.state.login ? (<Perfil persona={this.state.persona} cliente={this.state.cliente}/>): (<div/>)}
                 <PiePagina 
                 />
               </div>
@@ -97,8 +115,8 @@ class App extends Component {
               <div>
                 <Navegacion
                 />
-                <Cartelera
-                />
+                {this.state.consulta ? (<div/>): 
+                                       (<Cartelera list_movies={this.state.list_movies}/>)}
                 <PiePagina 
                 />
               </div>

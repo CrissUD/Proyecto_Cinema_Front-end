@@ -41,7 +41,8 @@
 }
 
 .img_user{
-    width: 180px;
+    width: 60%;
+    height: 60%;
     border-radius: 50%;
     display: block;
     margin: 10px auto;
