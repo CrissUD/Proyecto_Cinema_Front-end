@@ -15,8 +15,8 @@ export default class NavUsuario extends Component {
                     <span onClick={this.moveNavUser}>&#9776;</span>
                 </div>
                 <div className="user_info">
-                    <h3>Nombre de Usuario</h3>
-                    <img className="img_user" src="https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1415&q=80" alt="user_img"/>
+                    <h3>{this.props.persona.data.v_primernombre + " " + this.props.persona.data.v_primerapellido}</h3>
+                    <img className="img_user" src={this.props.persona.data.v_foto} alt="user_img"/>
                     <p>
                         Nada complementa una experiencia en el cine como unas crispetas saladas jueputa vida.
                     </p>

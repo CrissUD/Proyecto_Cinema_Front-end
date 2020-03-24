@@ -17,14 +17,23 @@ import ResumenCompra from './components/resumen_compra/ResumenCompra'
 class App extends Component {
 
   state= {
-    login: true
+    login: false,
+    persona: {},
+    cliente: {}
+  }
+
+  obtenerDatosUsuarioIngresado = async (persona, cliente) =>{
+      await this.setState({persona: persona, cliente: cliente, login: true});
+      console.log(this.state.persona)
+      console.log(this.state.persona.data.v_primernombre)
+      console.log(this.state.cliente)
   }
 
   render(){
     return (
       <div className="App">
         <Router>
-          {this.state.login ? (<NavUsuario/>): (<div/>)}
+          {this.state.login ? (<NavUsuario persona={this.state.persona} />): (<div/>)}
           <Route exact path='/' render={ () => {
             return (
               <div>
@@ -52,7 +61,7 @@ class App extends Component {
               <div>
                 <Navegacion
                 />
-                <Login
+                <Login enviarDatos={this.obtenerDatosUsuarioIngresado}
                 />
                 <PiePagina 
                 />

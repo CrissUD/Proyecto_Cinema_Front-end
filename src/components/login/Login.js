@@ -2,30 +2,45 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css'
+//import { useAlert } from 'react-alert'
 
 export default class Login extends Component {
-    
+
     state= {
         user: '',
-        password: ''
+        password: '',
+        persona: {},
+        cliente: {}
     }
 
-    validarUsuario = (event) =>{
+    validarUsuario = async (event) =>{
         event.preventDefault();
-        console.log(this.state.user)
-        console.log(this.state.password)
+        //const alert = useAlert();
         axios.post('http://localhost:8888/login', {
-            pk_cedula: parseInt(this.state.user,10) , 
-            pass: this.state.password
+            pk_numero_identificacion: parseInt(this.state.user,10) , 
+            v_pass: this.state.password
         })
         .then(response => { 
             alert(response.data.message)
-            console.log(response)
+            axios.get('http://localhost:8888/personas/' + parseInt(this.state.user,10))
+            .then(response => { 
+                this.setState({persona: response.data})
+                axios.get('http://localhost:8888/cliente/' + parseInt(this.state.user,10))
+                .then(response => { 
+                    this.setState({cliente: response.data})
+                    this.props.enviarDatos(this.state.persona, this.state.cliente)
+                })
+                .catch(error => {
+                    alert(error.response.data.message)
+                });
+            })
+            .catch(error => {
+                alert(error.response.data.message)
+            });
         })
         .catch(error => {
             alert(error.response.data.message)
         });
-        
     }
 
     onChange =  (event) =>{
