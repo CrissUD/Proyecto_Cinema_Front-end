@@ -17,6 +17,7 @@ export default class Cartelera extends Component {
                     <PeliculaCartelera
                         key={movies.id}
                         movie={movies}
+                        obtenerPeliculaEscogida={this.props.obtenerPeliculaEscogida}
                     /> 
                 ))}
             </div>

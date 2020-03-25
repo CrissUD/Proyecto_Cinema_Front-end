@@ -20,9 +20,11 @@ class App extends Component {
   state= {
     login: false,
     consulta: true,
+    pelicula_escogida: false,
     list_movies: [],
     persona: {},
-    cliente: {}
+    cliente: {},
+    pelicula: {}
   }
   
   async componentDidMount() {
@@ -43,10 +45,11 @@ class App extends Component {
 
   obtenerDatosUsuarioIngresado = async (persona, cliente) =>{
       await this.setState({persona: persona, cliente: cliente, login: true});
-      console.log(this.state.persona)
-      console.log(this.state.persona.data.v_primernombre)
-      console.log(this.state.cliente)
   }
+
+  obtenerPeliculaEscogida = async (pelicula) =>{
+    await this.setState({pelicula: pelicula, pelicula_escogida: true});
+}
 
   render(){
     return (
@@ -116,7 +119,10 @@ class App extends Component {
                 <Navegacion
                 />
                 {this.state.consulta ? (<div/>): 
-                                       (<Cartelera list_movies={this.state.list_movies}/>)}
+                                       (<Cartelera 
+                                          list_movies={this.state.list_movies}
+                                          obtenerPeliculaEscogida = {this.obtenerPeliculaEscogida}
+                                       />)}
                 <PiePagina 
                 />
               </div>
@@ -127,8 +133,8 @@ class App extends Component {
               <div>
                 <Navegacion
                 />
-                <DescripcionPelicula
-                />
+                {this.state.pelicula_escogida ? 
+                  (<DescripcionPelicula pelicula={this.state.pelicula}/>): (<div/>)}
                 <PiePagina 
                 />
               </div>

@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 
-
-.desc_movie{
+.btn_movie_button{
+    border: none;
+    background: transparent;
     width: 22%;
     display: inline-block;
     margin: 20px 10px;
+}
+
+.desc_movie{
+    width: 98%;
 }
 
 .card{
@@ -78,21 +83,21 @@
 
 
 @media(max-width:620px){
-    .desc_movie{
+    .btn_movie_button{
         width: 90%;
         display: block;
     }
 }
 
 @media (min-width: 615px) and (max-width:800px) {   
-    .desc_movie{
+    .btn_movie_button{
         width: 45%;
         display: inline-block;
     }
 }
 
 @media (min-width: 795px) and (max-width:1200px) {   
-    .desc_movie{
+    .btn_movie_button{
         width: 30%;
     }
 }

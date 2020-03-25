@@ -17,12 +17,12 @@ export default class DescripcionPelicula extends Component {
             <div className="container">
                 <div className="movie_info_stadistics">
                     <div className="movie_img_dif">
-                        <img className="img_movie_desc" src="https://es.web.img3.acsta.net/pictures/19/12/11/18/10/4293997.jpg" alt="movie_image_desc"/>
+                        <img className="img_movie_desc" src={this.props.pelicula.v_foto} alt="movie_image_desc"/>
                     </div>
                     <div className="movie_general_info">
-                        <h2>Nombre de Pelicula</h2>
-                        <p>Genero de Pelicula</p>
-                        <p>Clasificacion Pelicula</p>
+                        <h2>{this.props.pelicula.v_nombre}</h2>
+                        <p>{this.props.pelicula.v_genero}</p>
+                        <p>{this.props.pelicula.v_clasificacion}</p>
                     </div>
                     <div className="movie_ranking">
                         <div className="stars_ranking">
@@ -38,22 +38,22 @@ export default class DescripcionPelicula extends Component {
                         <div className="more_info_div">
                             <img className="more_info_img" src={require("../../resources/img/direccion.png")}  alt="direct_img"/>
                             <p className= "info_title">Director:</p>
-                            <p className= "info_text">Director Pelicula</p>
+                            <p className= "info_text">{this.props.pelicula.v_director}</p>
                         </div>
                         <div className="more_info_div">
                             <img className="more_info_img" src={require("../../resources/img/calendario.png")}  alt="calendary_img"/>
                             <p className= "info_title">Fecha estreno:</p>
-                            <p className= "info_text">20/01/2020</p>
+                            <p className= "info_text">{this.props.pelicula.d_fecha_estreno}</p>
                         </div>
                         <div className="more_info_div">
                             <img className="more_info_img" src={require("../../resources/img/ubicacion.png")}  alt="country_img"/>
                             <p className= "info_title">Pais Origen:</p>
-                            <p className= "info_text">Pais Pelicula</p>
+                            <p className= "info_text">{this.props.pelicula.v_pais_origen}</p>
                         </div>
                         <div className="more_info_div">
                             <img className="more_info_img" src={require("../../resources/img/reloj.png")}  alt="clock_img"/>
                             <p className= "info_title">Duracion:</p>
-                            <p className= "info_text">120 minutos</p>
+                            <p className= "info_text">{this.props.pelicula.i_duracion} minutos</p>
                         </div>
                         <div className="more_info_div">
                             <img className="more_info_img" src={require("../../resources/img/idiomas.png")}  alt="lenguaje_img"/>
@@ -69,13 +69,13 @@ export default class DescripcionPelicula extends Component {
                 </div>
                 <div className="movie_info_detals">
                     <div className="movie_sumary">
-                        <h1>Nombre de la Pelicula</h1>
+                        <h1>{this.props.pelicula.v_nombre}</h1>
                         <h3>Resumen</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti rerum repudiandae deserunt tempora expedita sequi dignissimos ipsa, aliquid unde velit modi excepturi doloribus nostrum sapiente dicta, ratione magnam delectus harum. Deserunt repudiandae provident doloremque nemo perspiciatis esse porro nobis dicta?</p>
+                        <p>{this.props.pelicula.tx_sinapsis}</p>
                     </div>
                     <div className="movie_casting">
                         <h3>Reparto</h3>
-                        <p>Margot Robbie, Mary Elizabeth Winstead, Ewan McGregor, Jurnee Smollett-Bell, Rosie Pérez, Chris Messina, Derek Wilson, Steven Williams, Ali Wong, Matthew Willig, Charlene Amoia, François Chau, Greice Santo, Eric Michael Cole.</p>
+                        <p>{this.props.pelicula.v_reparto}</p>
                     </div>
                     <div className="scroll_dates">
                         <FechasScroll/>
