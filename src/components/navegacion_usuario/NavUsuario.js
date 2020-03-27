@@ -35,7 +35,7 @@ export default class NavUsuario extends Component {
                         </Link>
                     </li>
                     <li>
-                        <Link className="btn_menu_user" to="/Tarjeta">
+                        <Link className="btn_menu_user" to="/TarjetaCredito">
                             <img className="img_btn" src={require("../../resources/img/tarjeta.png")} alt="tarjeta"/>
                             Registrar Tarjeta
                         </Link>

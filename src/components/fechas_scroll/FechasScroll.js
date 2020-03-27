@@ -19,14 +19,20 @@ export default class FechasScroll extends Component {
                 id: i,
                 day: currentDate.clone().add(i, 'day').format('D'),
                 dayText: currentDate.clone().add(i, 'day').format('dddd'),
-                monthText: currentDate.clone().add(i, 'day').format('MMM')
+                month: currentDate.clone().add(i, 'day').format('M'),
+                monthText: currentDate.clone().add(i, 'day').format('MMM'),
+                year: currentDate.clone().add(i, 'day').format('YYYY')
             }
             list.push(date)
         }
         return(
             <React.Fragment>
                 {list.map((date) => (
-                    <Fecha key={date.id} date={date}/>
+                    <Fecha 
+                        key={date.id} 
+                        date={date} 
+                        consultarFunciones={this.props.consultarFunciones}
+                        id={this.props.id}/>
                 ))}
             </React.Fragment>
         )

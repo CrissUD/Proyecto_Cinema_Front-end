@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+
+.desc_snack{
+    width: 20%;
+    display: inline-block;
+    margin: 20px 10px;
+}
+
+.card{
+    position: relative;
+    overflow: hidden;
+}
+.img_snack{
+    width: 50%;
+    padding-bottom: 0%;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.snack_panel button{
+    border: 2px solid #eea73b;
+    border-radius: 100%;
+    background: #ffffff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.snack_panel p{
+    display: inline-block;
+    color: #fff;
+    margin: 5px 20px;
+}
+.snack_panel button:focus{
+    outline: none !important;
+}
+.btn_num_tick_img{
+    width: 80%;
+    vertical-align: middle;
+}
+
+.snack_cant{
+    width: 100%;
+}
+
+.snack_cant h2, .snack_cant h4, .snack_cant p{
+    margin: 5px auto;
+    color: rgb(90, 90, 90);
+}
+.snack_cover{
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transform: translateY(100%);
+    transition: all 0.5s ease-out;
+}
+
+
+.img_cover{
+    width: 15%;
+}
+
+.snack_att{
+    margin: 25px auto;
+}
+
+.snack_cover p{
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 14px;
+    margin: 2px auto;
+}
+
+.card_name{
+    font-family: 'Anton', sans-serif;
+    margin: 5px 10px;
+    padding: 10px 10px;
+    background: #eea73b;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.card_name:hover{
+    background: #f09a18;
+}
+
+.card_B{
+    margin: 5px 10px;
+    padding: 10px 10px;
+    background: gray;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.Precio p{
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+.snack_info{
+    margin: 0px auto;
+}
+
+.desc_snack:hover .snack_cover{
+    transform: translateY(0%);
+}
+
+@media(max-width:620px){
+    .desc_snack{
+        width: 90%;
+        display: block;
+    }
+
+}
+
+@media (min-width: 615px) and (max-width:800px) {   
+    .desc_snack{
+        width: 45%;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 795px) and (max-width:1200px) {   
+    .desc_snack{
+        width: 30%;
+    }
+}

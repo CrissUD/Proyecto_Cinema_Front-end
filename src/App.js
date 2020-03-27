@@ -13,35 +13,49 @@ import DescripcionPelicula from './components/descripcion_pelicula/DescripcionPe
 import CantidadBoletas from './components/cantidad_boletas/CantidadBoletas';
 import SeleccionSillas from './components/seleccion_sillas/SeleccionSillas';
 import ResumenCompra from './components/resumen_compra/ResumenCompra'
+import Snacks from './components/snacks/Snacks'
+import TarjetaCredito from './components/tarjeta_credito/TerjetaCredito'
 import axios from 'axios';
 
 class App extends Component {
 
   state= {
     login: false,
-    consulta: true,
+    consulta_p: true,
+    consulta_s: true,
     pelicula_escogida: false,
     list_movies: [],
+    list_snakcs: [],
     persona: {},
     cliente: {},
     pelicula: {}
   }
   
   async componentDidMount() {
-    console.log(this.state.consulta)
-    if(this.state.consulta){
+    console.log(this.state.consulta_p)
+    if(this.state.consulta_p){
         console.log('paso aqui')
         axios.get('http://localhost:8888/peliculas')
         .then(response => { 
-            this.setState({list_movies: response.data, consulta:false})
+            this.setState({list_movies: response.data, consulta_p:false})
             console.log(this.state.list_movies.data)
         })
         .catch(error => {
             alert(error.response.data.message)
         });   
     }
+    if(this.state.consulta_s){
+      console.log('paso aqui')
+      axios.get('http://localhost:8888/snack')
+      .then(response => { 
+          this.setState({list_snakcs: response.data, consulta_s:false})
+          console.log(this.state.list_snakcs.data)
+      })
+      .catch(error => {
+          alert(error.response.data.message)
+      });   
   }
-
+  }
 
   obtenerDatosUsuarioIngresado = async (persona, cliente) =>{
       await this.setState({persona: persona, cliente: cliente, login: true});
@@ -113,6 +127,17 @@ class App extends Component {
               </div>
             )}}
           />
+          <Route path='/TarjetaCredito' render={ () => {
+            return (
+              <div>
+                <Navegacion
+                />
+                {this.state.login ? (<TarjetaCredito persona={this.state.persona} cliente={this.state.cliente}/>): (<div/>)}
+                <PiePagina 
+                />
+              </div>
+            )}}
+          />
           <Route path='/Cartelera' render={ () => {
             return (
               <div>
@@ -134,7 +159,22 @@ class App extends Component {
                 <Navegacion
                 />
                 {this.state.pelicula_escogida ? 
-                  (<DescripcionPelicula pelicula={this.state.pelicula}/>): (<div/>)}
+                  (<DescripcionPelicula login={this.state.login} pelicula={this.state.pelicula}/>): (<div/>)}
+                <PiePagina 
+                />
+              </div>
+            )}}
+          />
+          
+          <Route path='/Snacks' render={ () => {
+            return (
+              <div>
+                <Navegacion
+                />
+                {this.state.consulta_s ? (<div/>): 
+                                       (<Snacks 
+                                          list_snakcs={this.state.list_snakcs}
+                                       />)}
                 <PiePagina 
                 />
               </div>
@@ -145,8 +185,7 @@ class App extends Component {
               <div>
                 <Navegacion
                 />
-                <CantidadBoletas
-                />
+                {this.state.login ? (<CantidadBoletas/>): (alert('necesita ingresar con usuario para continuar'))}
                 <PiePagina 
                 />
               </div>

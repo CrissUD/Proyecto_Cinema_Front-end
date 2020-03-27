@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+
+.snack_select{
+    width: 70%;
+    display: inline-block;
+}
+.header_billboard{
+    text-align: justify;
+    text-justify: inter-word;
+    border-bottom: 15px solid #e6e6e6;
+}
+
+.header_billboard h1{
+    font-family: 'Quicksand', sans-serif;
+    color: #777777;
+    font-weight: bold;
+    font-size: 40px;
+}
+.chair_panel button:focus{
+    outline: none !important;
+}
+.chair_num_chose{
+    width: 25%;
+    display: inline-block;
+}
+
+.snacks_total_valor, .snacks_total_puntos{
+    width: 48%;
+    display: inline-block;
+    color: #333;
+}
+
+
+.buttn{
+    width: 70%;
+    height: 50px;
+    background: linear-gradient(to right, #71a0da,#1963c4,#71a0da);
+    background-size: 200%;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 30px auto;
+}

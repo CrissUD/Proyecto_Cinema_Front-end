@@ -1,15 +1,46 @@
 import React, { Component } from 'react';
 import FechasScroll from '../fechas_scroll/FechasScroll';
 import Horarios from '../horarios/HorariosMenu';
-import PanelConfirmacion from '../panel_Confirmacion/PanelConfirmacion'
+import PanelConfirmacion from '../panel_Confirmacion/PanelConfirmacion';
 import './DescripcionPelicula.css';
+import axios from 'axios';
 
 export default class DescripcionPelicula extends Component {
+
+    state = {
+        horarios: false,
+        horaB: false,
+        hora: '',
+        teatro:'',
+        proyeccion: '',
+        fecha: '',
+        list_funciones: []
+    }
 
     constructor(){
         super()
         this.panel = React.createRef(); //create ref
         this.panelBackground= React.createRef();
+    }
+
+    consultarFunciones = (id, fecha) =>{
+        this.setState({fecha:fecha})
+        axios.get('http://localhost:8888/funciones/' + fecha + '/'+ id)
+        .then(response => { 
+            this.setState({list_funciones: response.data.data[0], horarios: true})
+        })
+        .catch(error => {
+            alert('error.response.data.message')
+        });
+    }
+
+    recibirHoraTeatro = (hora, teatro, proyeccion) =>{
+        this.setState({
+            hora: hora,
+            teatro: teatro,
+            proyeccion:proyeccion,
+            horaB: true
+        })
     }
 
     render() {
@@ -78,13 +109,30 @@ export default class DescripcionPelicula extends Component {
                         <p>{this.props.pelicula.v_reparto}</p>
                     </div>
                     <div className="scroll_dates">
-                        <FechasScroll/>
+                        <FechasScroll consultarFunciones={this.consultarFunciones} id={this.props.pelicula.id}/>
                     </div>
                     <div className="confirmation">
-                        <PanelConfirmacion panel={this.panel} panelBackground={this.panelBackground}/>
+                        <PanelConfirmacion 
+                            fecha={this.state.fecha}
+                            pelicula={this.props.pelicula.v_nombre}
+                            hora={this.state.hora}
+                            teatro={this.state.teatro}
+                            proyeccion={this.state.proyeccion}
+                            login={this.props.login}
+                            panel={this.panel} 
+                            panelBackground={this.panelBackground}
+                        />
                     </div>
                     <div className="movie_timetable">
-                        <Horarios panel={this.panel} panelBackground={this.panelBackground}/>
+                        {this.state.horarios ? 
+                            (<Horarios 
+                                list_funciones={this.state.list_funciones} 
+                                recibirHoraTeatro={this.recibirHoraTeatro}
+                                panel={this.panel} 
+                                panelBackground={this.panelBackground}
+                            />)
+                            : (<div/>)
+                        }
                     </div>
                     
                 </div>

@@ -122,7 +122,7 @@ export default class SeleccionSillas extends Component {
                         </div>
                     </div>
                     <div className="button_chair_confirm">
-                        <Link className="button_chair_confirm_link" to="/ResumenCompra">
+                        <Link className="button_chair_confirm_link" to="/Snacks">
                             <button  className="btn_chair_confirm">
                                 Confirmar
                             </button>
