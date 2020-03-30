@@ -7,41 +7,167 @@ import './SeleccionSillas.css';
 export default class SeleccionSillas extends Component {
 
     state = {
-        sillas_vip: ['F0','F1','F2','F3','F4','F5','F6','F7','F8','F9',
-                     'E0','E1','E2','E3','E4','E5','E6','E7','E8','E9'],
-
-        sillas_general: ['D0','D1','D2','D3','D4','D5','D6','D7','D8','D9',
-                         'C0','C1','C2','C3','C4','C5','C6','C7','C8','C9',
-                         'B0','B1','B2','B3','B4','B5','B6','B7','B8','B9',
-                         'A0','A1','A2','A3','A4','A5','A6','A7','A8','A9']
+        sPreferencial: [],
+        sGeneral: [],
+        sSeleccionadas: [],
+        preferencial: true,
+        general: true,
+        numeroGeneral:0,
+        numeroPreferencial:0,
+        paso: false
     }
 
+    async componentDidMount(){
+        var sPreferencial= []
+        var sGeneral = []
+        this.props.objReserva.disponibles.map(silla =>{
+            if(silla.v_tipo === "general"){
+                silla.estado= "disponible"
+                sGeneral.push(silla)
+            }
+            else if(silla.v_tipo === "preferencial"){
+                silla.estado= "disponible"
+                sPreferencial.push(silla)
+            }
+            return null
+        })
+        this.props.objReserva.reservadas.map(silla =>{
+            if(silla.v_tipo === "general"){
+                silla.estado= "reservada"
+                sGeneral.push(silla)
+            }
+            else if(silla.v_tipo === "preferencial"){
+                silla.estado= "reservada"
+                sPreferencial.push(silla)
+            }
+            return null
+        })
+        this.props.objReserva.proceso.map(silla =>{
+            if(silla.v_tipo === "general"){
+                silla.estado= "reservada"
+                sGeneral.push(silla)
+            }
+            else if(silla.v_tipo === "preferencial"){
+                silla.estado= "reservada"
+                sPreferencial.push(silla)
+            }
+            return null
+        })
+        sPreferencial.sort(function (a, b) {
+              return  b.id  - a.id;
+        })
+        sGeneral.sort(function (a, b) {
+            return b.id - a.id;
+      })
+      console.log(sPreferencial)
+      console.log(sGeneral)
+      await this.setState({sGeneral: sGeneral, sPreferencial: sPreferencial})
+      if(this.props.objBoletas.boletasGeneral === 0 ){
+        await this.setState({general: false})
+      }
+      if(this.props.objBoletas.boletasVip === 0 ){
+        await this.setState({preferencial: false})
+      }
+    }
+
+    verificarSeleccion = async (tipoSilla) => {
+        if(tipoSilla === "general" && this.state.numeroGeneral >= this.props.objBoletas.boletasGeneral)
+            await this.setState({general: false})
+        else 
+            if(tipoSilla === "general")
+                await this.setState({general: true})
+        if(tipoSilla === "preferencial" && this.state.numeroPreferencial >= this.props.objBoletas.boletasVip)
+            await this.setState({preferencial: false})
+        else
+            if(tipoSilla === "preferencial")
+                await this.setState({preferencial: true})
+    }
+
+    actualizarNumeroSillas = async (tipoSilla, numero) => {
+        if(tipoSilla === "general"){
+            await this.setState({numeroGeneral: this.state.numeroGeneral + numero})
+        }else
+        if(tipoSilla === "preferencial"){
+            await this.setState({numeroPreferencial: this.state.numeroPreferencial + numero})
+        }
+    }
+
+    actualizarSillasEscogidas= async(accion, silla) =>{
+        if(accion==="seleccion"){
+            await this.setState(state => {
+                const sSeleccionadas = [...state.sSeleccionadas, silla];
+                return {
+                    sSeleccionadas
+                };
+            });
+        }
+        else if (accion==="deseleccion"){
+            await this.setState(state => {
+                const sSeleccionadas = state.sSeleccionadas.filter(item => item.id !== silla.id);
+                return {
+                    sSeleccionadas
+                };
+              });
+        }
+        this.evaluarPaso()
+    }
 
     mostrarSillas = () =>{
         return(
             <div className="charis_position">
-                {this.state.sillas_vip.map(chair => (
+                {this.state.sPreferencial.map(silla => (
                     <Silla 
-                        key={chair}
-                        tipo_silla={'preferencial'} 
-                        estado_silla={'disponible'} 
-                        url_silla={require("../../resources/img/silla_vip_blanca.png")}
-                        codigo_silla={chair}
+                        key={silla.id}
+                        tipo_silla={silla.v_tipo} 
+                        estado_silla={silla.estado}
+                        codigo_silla={silla.pk_numero}
+                        seleccion={this.state.preferencial}
+                        silla={silla}
+                        actualizarSillasEscogidas={this.actualizarSillasEscogidas}
+                        verificarSeleccion={this.verificarSeleccion}
+                        actualizarNumeroSillas={this.actualizarNumeroSillas}
                     />
                 ))}
                 <div className="separator"/>
-                {this.state.sillas_general.map(chair => (
+                {this.state.sGeneral.map(silla => (
                     <Silla 
-                        key={chair}
-                        tipo_silla={'general'} 
-                        estado_silla={'disponible'}
-                        url_silla={require("../../resources/img/silla_blanca.png")}
-                        codigo_silla={chair}
+                        key={silla.id}
+                        tipo_silla={silla.v_tipo} 
+                        estado_silla={silla.estado}
+                        codigo_silla={silla.pk_numero}
+                        seleccion={this.state.general}
+                        silla={silla}
+                        actualizarSillasEscogidas={this.actualizarSillasEscogidas}
+                        verificarSeleccion={this.verificarSeleccion}
+                        actualizarNumeroSillas={this.actualizarNumeroSillas}
                     />
                 ))}
 
             </div>
         )   
+    }
+
+    evaluarPaso = async () =>{
+        if(this.state.numeroGeneral === this.props.objBoletas.boletasGeneral && this.state.numeroPreferencial === this.props.objBoletas.boletasVip){
+            await this.setState({paso: true})
+        }
+        else{
+            await this.setState({paso: false})
+        }
+    }
+
+    enviarSillasReservadas = () =>{
+        var obj = {
+            numeroGeneral: this.state.numeroGeneral,
+            numeroPreferencial:this.state.numeroPreferencial,
+            sSeleccionadas: this.state.sSeleccionadas
+        }
+        this.props.reservarSillas(obj)
+    }
+
+    showAlert = (event) =>{
+        event.preventDefault();
+        alert('le falta seleccionar algunos asientos')
     }
 
     render() {
@@ -122,11 +248,16 @@ export default class SeleccionSillas extends Component {
                         </div>
                     </div>
                     <div className="button_chair_confirm">
-                        <Link className="button_chair_confirm_link" to="/Snacks">
-                            <button  className="btn_chair_confirm">
+                        {this.state.paso ? 
+                            (<Link className="button_chair_confirm_link" to="/Snacks">
+                                <button  className="btn_chair_confirm" onClick={this.enviarSillasReservadas}>
+                                    Confirmar
+                                </button>
+                            </Link>):
+                            (<button  className="btn_chair_confirm" onClick={this.showAlert}>
                                 Confirmar
-                            </button>
-                        </Link>
+                            </button>)
+                        }
                     </div>
                 </div>
                 <div className="buy_history">

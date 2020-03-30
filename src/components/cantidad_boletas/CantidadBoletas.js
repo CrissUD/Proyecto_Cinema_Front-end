@@ -8,11 +8,16 @@ export default class CantidadBoletas extends Component {
     state = {
         num_chair_general: 0,
         num_chair_vip: 0,
-        total:0
+        putnos: 0,
+        total:0,
+        sDisponiblesGeneral: [],
+        sDisponiblesPreferencial: []
     }
 
     updateTotal = async () =>{
         await this.setState({total: (this.state.num_chair_general*10000)+(this.state.num_chair_vip*16000)})
+        await this.setState({putnos: (this.state.num_chair_general*5)+(this.state.num_chair_vip*8)})
+        this.mostrarBoton()
     }
     
     downChairGeneral = async () =>{
@@ -22,7 +27,7 @@ export default class CantidadBoletas extends Component {
     }
 
     upChairGeneral = async () =>{
-        if(this.state.num_chair_general < 40)
+        if(this.state.num_chair_general < this.state.sDisponiblesGeneral.length)
             await this.setState({num_chair_general: this.state.num_chair_general+1})
         this.updateTotal()
     }
@@ -34,14 +39,48 @@ export default class CantidadBoletas extends Component {
     }
 
     upChairVip = async () =>{
-        if(this.state.num_chair_vip < 20)
+        if(this.state.num_chair_vip < this.state.sDisponiblesPreferencial.length)
             await this.setState({num_chair_vip: this.state.num_chair_vip+1})
         this.updateTotal()
     }
 
-    componentDidUpdate(){
-        if(this.state.total > 0)
-            document.getElementById('buy_btn').classList.toggle('active');
+    async componentDidMount(){
+        this.props.objReserva.disponibles.map(async silla =>{
+            if(silla.v_tipo === "general"){
+                await this.setState(state => {
+                    const sDisponiblesGeneral = [...state.sDisponiblesGeneral, silla];
+                    return {
+                        sDisponiblesGeneral
+                    };
+                });
+            }
+            else if(silla.v_tipo === "preferencial"){
+                await this.setState(state => {
+                    const sDisponiblesPreferencial = [...state.sDisponiblesPreferencial, silla];
+                    return {
+                        sDisponiblesPreferencial
+                    };
+                });
+            }
+        })
+    }
+
+    mostrarBoton = () =>{
+        console.log('mBoton')
+        if(this.state.total === 0)
+            document.getElementById('buy_btn').style.opacity= 0
+        else
+            document.getElementById('buy_btn').style.opacity= 1
+    }
+
+    enviarDatosBoletas = () =>{
+        var obj={
+            boletasGeneral: this.state.num_chair_general,
+            boletasVip: this.state.num_chair_vip,
+            total: this.state.total,
+            puntos: this.state.putnos
+        }
+        this.props.recibirCantidadBoletas(obj)
     }
 
     render() {
@@ -138,11 +177,15 @@ export default class CantidadBoletas extends Component {
                                     <h4>Valor:</h4>
                                     <p>${this.state.total}</p>
                                 </div>
+                                <div className="chair_panel chair_num_chose2">
+                                    <h2>Total Puntos</h2>
+                                    <p>{this.state.putnos}</p>
+                                </div>
                             </div>
                         </div>
                         <div className="button_buy">
                             <Link className="btn_buy" to="/EscogerAsientos">
-                                <button id="buy_btn" className="buy_btn">
+                                <button id="buy_btn" className="buy_btn" onClick={this.enviarDatosBoletas}>
                                     Confirmar
                                 </button>
                             </Link>

@@ -10,7 +10,6 @@ export default class Snack extends Component {
         total:0
     }
 
-
     updateTotal = async () =>{
         await this.setState({total: (this.state.num_snack*this.props.snack.i_precio)})
         
@@ -22,6 +21,7 @@ export default class Snack extends Component {
             this.updateTotal()
             this.props.actualizar_pago(this.props.snack.i_precio*-1)
             this.props.actualizar_puntos(this.props.snack.i_puntosofrecidos*-1)
+            this.props.actualizarSnacksEscogidos("deseleccion", this.props.snack)
         }     
     }
 
@@ -31,6 +31,7 @@ export default class Snack extends Component {
             this.updateTotal()
             this.props.actualizar_pago(this.props.snack.i_precio)
             this.props.actualizar_puntos(this.props.snack.i_puntosofrecidos)
+            this.props.actualizarSnacksEscogidos("seleccion", this.props.snack)
         }
     }
 

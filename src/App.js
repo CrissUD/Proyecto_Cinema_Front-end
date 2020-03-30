@@ -23,11 +23,21 @@ class App extends Component {
     login: false,
     consulta_p: true,
     consulta_s: true,
+    reserva: false,
+    boletas:false,
+    sillas: false,
     pelicula_escogida: false,
+    snacks: false,
     list_movies: [],
     list_snakcs: [],
+    objPreReserva: {},
+    objReserva:{},
+    objBoletas: {},
+    objSnacks: {},
+    objSillas: {},
     persona: {},
     cliente: {},
+    authtoken:{},
     pelicula: {}
   }
   
@@ -57,13 +67,87 @@ class App extends Component {
   }
   }
 
-  obtenerDatosUsuarioIngresado = async (persona, cliente) =>{
-      await this.setState({persona: persona, cliente: cliente, login: true});
+  obtenerDatosUsuarioIngresado = async (persona, cliente, authtoken) =>{
+      await this.setState({persona: persona, cliente: cliente, authtoken:authtoken,login: true});
   }
 
   obtenerPeliculaEscogida = async (pelicula) =>{
     await this.setState({pelicula: pelicula, pelicula_escogida: true});
-}
+  }
+
+  consultarDisponibilidad = async (objPreReserva) => {
+    await this.setState({objPreReserva: objPreReserva})
+    axios.get('http://localhost:8888/reserva/' + objPreReserva.sala + '/' + objPreReserva.funcion + '/' + this.state.persona.data.pk_numero_identificacion, 
+      { 
+        headers: { authtoken: this.state.authtoken } 
+      })
+    .then(async response => { 
+      var obj={
+        reserva: response.data.data[0],
+        reservadas: response.data.data[1],
+        proceso: response.data.data[2],
+        disponibles: response.data.data[3],
+      }
+      await this.setState({objReserva: obj, reserva:true})
+      console.log(this.state.objReserva)
+    })
+    .catch(error => {
+        alert('error.response.data.message')
+    });
+  }
+
+   recibirCantidadBoletas = async (objBoletas) =>{
+    await this.setState({objBoletas: objBoletas, boletas: true})  
+  }
+
+  reservarSillas = async (objSillas) =>{
+    await this.setState({objSillas: objSillas, sillas: true})  
+    this.state.objSillas.sSeleccionadas.map(silla =>{
+      axios.post('http://localhost:8888/reserva/silla/', 
+      {
+        fk_silla: silla.id,
+        fk_funcion_sala: this.state.objPreReserva.fun_sala,
+        fk_reserva: this.state.objReserva.reserva.id,
+        pk_numero_identificacion: this.state.persona.data.pk_numero_identificacion
+      },
+      { 
+        headers: { authtoken: this.state.authtoken } 
+      })
+    .then(response => { 
+      alert(response.data.message)
+    })
+    .catch(error => {
+      alert(error.response.data.message)
+    });
+    return null
+    })
+    console.log(this.state.sSeleccionadas)
+  }
+
+  reservarSnaks = async (objSnacks) =>{
+    await this.setState({objSnacks: objSnacks, snacks: true})  
+    console.log(this.state.objSnacks.snaksSeleccionados)
+    this.state.objSnacks.snaksSeleccionados.map(snack =>{
+      if(snack.numero > 0){
+        axios.post('http://localhost:8888/reserva/snack/', 
+        {
+          fk_reserva: this.state.objReserva.reserva.id,
+          fk_snack: snack.id,
+          i_cantidad: snack.numero
+        },
+        { 
+          headers: { authtoken: this.state.authtoken } 
+        })
+        .then(response => { 
+          alert(response.data.message)
+        })
+        .catch(error => {
+          alert(error.response.data.message)
+        });
+      }
+    return null
+    })
+  }
 
   render(){
     return (
@@ -159,7 +243,11 @@ class App extends Component {
                 <Navegacion
                 />
                 {this.state.pelicula_escogida ? 
-                  (<DescripcionPelicula login={this.state.login} pelicula={this.state.pelicula}/>): (<div/>)}
+                  (<DescripcionPelicula 
+                    login={this.state.login} 
+                    pelicula={this.state.pelicula}
+                    consultarDisponibilidad={this.consultarDisponibilidad}
+                  />): (<div/>)}
                 <PiePagina 
                 />
               </div>
@@ -174,6 +262,7 @@ class App extends Component {
                 {this.state.consulta_s ? (<div/>): 
                                        (<Snacks 
                                           list_snakcs={this.state.list_snakcs}
+                                          reservarSnaks={this.reservarSnaks}
                                        />)}
                 <PiePagina 
                 />
@@ -185,7 +274,13 @@ class App extends Component {
               <div>
                 <Navegacion
                 />
-                {this.state.login ? (<CantidadBoletas/>): (alert('necesita ingresar con usuario para continuar'))}
+                {this.state.login && this.state.reserva ? 
+                  (<CantidadBoletas 
+                    objReserva={this.state.objReserva}
+                    recibirCantidadBoletas={this.recibirCantidadBoletas}
+                  />): 
+                  (<div/>)
+                }
                 <PiePagina 
                 />
               </div>
@@ -196,8 +291,16 @@ class App extends Component {
               <div>
                 <Navegacion
                 />
-                <SeleccionSillas
-                />
+                {this.state.boletas ? 
+                  (<SeleccionSillas
+                    objBoletas={this.state.objBoletas}
+                    objPreReserva = {this.state.objPreReserva}
+                    objReserva={this.state.objReserva}
+                    reservarSillas={this.reservarSillas}
+                  />): 
+                  (<div/>)
+                }
+                
                 <PiePagina 
                 />
               </div>
@@ -208,8 +311,18 @@ class App extends Component {
               <div>
                 <Navegacion
                 />
-                <ResumenCompra
-                />
+                {this.state.snacks ? 
+                  (<ResumenCompra
+                    objPreReserva= {this.state.objPreReserva}
+                    objBoletas= {this.state.objBoletas}
+                    objSnacks= {this.state.objSnacks}
+                    objSillas = {this.state.objSillas}
+                    persona = {this.state.persona}
+                    pelicula = {this.state.pelicula}
+                  />): 
+                  (<div/>)
+                }
+                
                 <PiePagina 
                 />
               </div>

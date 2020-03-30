@@ -13,6 +13,23 @@ export default class PanelConfirmacion extends Component {
         event.preventDefault();
         alert('necesita ingresar con usuario para continuar')
     }
+
+    enviarDatos = (event) =>{
+        var objPreReserva= 
+        {
+            pelicula: this.props.pelicula,
+            fecha: this.props.fecha,
+            hora: this.props.hora,
+            teatro: this.props.teatro,
+            funcion: this.props.funcion,
+            proyeccion: this.props.proyeccion,
+            sala: this.props.sala,
+            numSala: this.props.numSala,
+            fun_sala: this.props.fun_sala
+        }
+        this.props.consultarDisponibilidad(objPreReserva)
+    }
+
     render() {
         return (
             <div className="panel_complete">
@@ -33,7 +50,7 @@ export default class PanelConfirmacion extends Component {
                     <div className="info_confirmations">
                         {this.props.login ? 
                             (<Link className="btn_confirmation" to="/CompraBoletas">
-                                <button className="button_confirmation">
+                                <button className="button_confirmation" onClick={this.enviarDatos}>
                                     Confirmar
                                 </button>
                             </Link>):

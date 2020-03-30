@@ -9,11 +9,14 @@ export default class DescripcionPelicula extends Component {
 
     state = {
         horarios: false,
-        horaB: false,
         hora: '',
         teatro:'',
         proyeccion: '',
         fecha: '',
+        funcion: 0,
+        sala: 0,
+        numSala: 0,
+        fun_sala: 0,
         list_funciones: []
     }
 
@@ -28,18 +31,22 @@ export default class DescripcionPelicula extends Component {
         axios.get('http://localhost:8888/funciones/' + fecha + '/'+ id)
         .then(response => { 
             this.setState({list_funciones: response.data.data[0], horarios: true})
+            console.log(this.state.list_funciones)
         })
         .catch(error => {
             alert('error.response.data.message')
         });
     }
 
-    recibirHoraTeatro = (hora, teatro, proyeccion) =>{
+    recibirHoraTeatro = (hora, teatro, proyeccion, funcion, sala, numSala, fun_sala) =>{
         this.setState({
             hora: hora,
             teatro: teatro,
             proyeccion:proyeccion,
-            horaB: true
+            funcion: funcion,
+            sala: sala,
+            numSala: numSala,
+            fun_sala: fun_sala
         })
     }
 
@@ -118,9 +125,14 @@ export default class DescripcionPelicula extends Component {
                             hora={this.state.hora}
                             teatro={this.state.teatro}
                             proyeccion={this.state.proyeccion}
+                            funcion={this.state.funcion}
+                            sala={this.state.sala}
+                            numSala={this.state.numSala}
+                            fun_sala={this.state.fun_sala}
                             login={this.props.login}
                             panel={this.panel} 
                             panelBackground={this.panelBackground}
+                            consultarDisponibilidad={this.props.consultarDisponibilidad}
                         />
                     </div>
                     <div className="movie_timetable">
@@ -134,7 +146,6 @@ export default class DescripcionPelicula extends Component {
                             : (<div/>)
                         }
                     </div>
-                    
                 </div>
             </div>
         )

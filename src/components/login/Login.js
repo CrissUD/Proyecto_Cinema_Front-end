@@ -9,6 +9,7 @@ export default class Login extends Component {
     state= {
         user: '',
         password: '',
+        authtoken: {},
         persona: {},
         cliente: {}
     }
@@ -21,6 +22,8 @@ export default class Login extends Component {
             v_pass: this.state.password
         })
         .then(response => { 
+            console.log(response)
+            this.setState({authtoken:response.data.auth})
             alert(response.data.message)
             axios.get('http://localhost:8888/personas/' + parseInt(this.state.user,10))
             .then(response => { 
@@ -28,7 +31,7 @@ export default class Login extends Component {
                 axios.get('http://localhost:8888/cliente/' + parseInt(this.state.user,10))
                 .then(response => { 
                     this.setState({cliente: response.data})
-                    this.props.enviarDatos(this.state.persona, this.state.cliente)
+                    this.props.enviarDatos(this.state.persona, this.state.cliente, this.state.authtoken)
                 })
                 .catch(error => {
                     alert(error.response.data.message)

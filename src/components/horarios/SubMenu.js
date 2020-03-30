@@ -20,6 +20,10 @@ export default class Horarios extends Component {
                                             recibirHoraTeatro={this.props.recibirHoraTeatro}
                                             teatro={this.props.teatro}
                                             proyeccion={"2D Doblada"}
+                                            idFuncion={funcion.fk_funcion}
+                                            idSala={funcion.fk_sala}
+                                            numSala={funcion.i_numsala}
+                                            fun_sala={funcion.id}
                                             panel={this.props.panel} 
                                             panelBackground={this.props.panelBackground}
                                         />
@@ -45,6 +49,10 @@ export default class Horarios extends Component {
                                             recibirHoraTeatro={this.props.recibirHoraTeatro}
                                             teatro={this.props.teatro}
                                             proyeccion={"2D Subtitulada"}
+                                            idFuncion={funcion.fk_funcion}
+                                            idSala={funcion.fk_sala}
+                                            numSala={funcion.i_numsala}
+                                            fun_sala={funcion.id}
                                             panel={this.props.panel} 
                                             panelBackground={this.props.panelBackground}
                                         />
@@ -70,6 +78,10 @@ export default class Horarios extends Component {
                                             recibirHoraTeatro={this.props.recibirHoraTeatro}
                                             teatro={this.props.teatro}
                                             proyeccion={"3D Doblada"}
+                                            idFuncion={funcion.fk_funcion}
+                                            idSala={funcion.fk_sala}
+                                            numSala={funcion.i_numsala}
+                                            fun_sala={funcion.id}
                                             panel={this.props.panel} 
                                             panelBackground={this.props.panelBackground}
                                         />
@@ -95,6 +107,10 @@ export default class Horarios extends Component {
                                             recibirHoraTeatro={this.props.recibirHoraTeatro}
                                             teatro={this.props.teatro}
                                             proyeccion={"3D Subtitulada"}
+                                            idFuncion={funcion.fk_funcion}
+                                            idSala={funcion.fk_sala}
+                                            numSala={funcion.i_numsala}
+                                            fun_sala={funcion.id}
                                             panel={this.props.panel} 
                                             panelBackground={this.props.panelBackground}
                                         />

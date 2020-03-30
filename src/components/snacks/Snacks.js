@@ -7,15 +7,68 @@ import './Snack.js';
 export default class Snacks extends Component {
     state = {
         sumaTotal:0,
-        puntosTotal:0
+        puntosTotal:0,
+        snaksSeleccionados: []
+    }
+    
+    async componentDidMount () {
+        var snaksSeleccionados= []
+        this.props.list_snakcs.data.map(snack =>{
+            snack.numero= 0
+            snaksSeleccionados.push(snack)
+            return null
+        })
+        this.setState({snaksSeleccionados: snaksSeleccionados})
     }
 
     actualizar_pago = async (total_snack) =>{
-        this.setState({sumaTotal:  this.state.sumaTotal+total_snack})
+        await this.setState({sumaTotal:  this.state.sumaTotal+total_snack})
     }
 
     actualizar_puntos = async (total_snack) =>{
-        this.setState({puntosTotal:  this.state.puntosTotal+total_snack})
+        await this.setState({puntosTotal:  this.state.puntosTotal+total_snack})
+    }
+
+    actualizarSnacksEscogidos= async(accion, snack) =>{
+        if(accion==="seleccion"){
+            await this.setState(state => {
+                const snaksSeleccionados = state.snaksSeleccionados.map((item) => {
+                  if (item.id === snack.id) {
+                        item.numero = item.numero + 1
+                    return item;
+                  } else {
+                    return item;
+                  }
+                });
+                return {
+                    snaksSeleccionados,
+                };
+            });
+        }
+        else if (accion==="deseleccion"){
+            await this.setState(state => {
+                const snaksSeleccionados = state.snaksSeleccionados.map((item) => {
+                  if (item.id === snack.id) {
+                        item.numero = item.numero - 1
+                    return item;
+                  } else {
+                    return item;
+                  }
+                });
+                return {
+                    snaksSeleccionados,
+                };
+            });
+        }
+    }
+
+    enviarSnaks = async () =>{
+        var objSnaks= {
+            sumaTotal: this.state.sumaTotal,
+            puntosTotal:this.state.puntosTotal,
+            snaksSeleccionados: this.state.snaksSeleccionados
+        }
+        this.props.reservarSnaks(objSnaks)
     }
     
     mostrarSnacks = () =>{
@@ -27,6 +80,7 @@ export default class Snacks extends Component {
                         snack={snacks}
                         actualizar_pago={this.actualizar_pago}
                         actualizar_puntos={this.actualizar_puntos}
+                        actualizarSnacksEscogidos={this.actualizarSnacksEscogidos}
                     />
                 ))}
                 <div className="snacks_total_valor">
@@ -55,7 +109,7 @@ export default class Snacks extends Component {
                     {this.mostrarSnacks()}
                     <div>
                         <Link className="linqueo" to="/ResumenCompra">
-                            <button className="buttn">Continuar</button>
+                            <button className="buttn" onClick={this.enviarSnaks}>Continuar</button>
                         </Link>
                     </div>
                 </div>

@@ -7,6 +7,10 @@
     text-justify: inter-word;
 }
 
+.summary_content h5{
+    color: #eea73b;
+}
+
 .summary_content h2{
     color: #1963c4;
     font-size: 28px;
@@ -24,24 +28,17 @@
 
 .summary_header, .summary_movie, .summary_function,
 .summary_theater, .summary_tickets, .summary_chairs,
-.summary_food, .summary_total{
+.summary_food, .summary_total, .summary_person{
     margin: 40px 20px;
     border-bottom: 1px solid #ccc;
 }
 
-.ticket_name, .ticket_numbner, .ticket_cost{
+.ticket_points_total, .ticket_cost_total{
     display: inline-block;
-    width: 30%;
-}
-
-.ticket_numbner{
+    width: 48%;
     text-align: center;
+    vertical-align: middle;
 }
-
-.ticket_cost p{
-    text-align: right;
-}
-
 .chair_name img{
     width: 60px;
     margin-bottom: 0px;
@@ -50,15 +47,17 @@
 .chair_name, .chair_number, .chair_code{
     display: inline-block;
     width: 30%;
-}
-
-.chair_number{
     text-align: center;
+    vertical-align: top;
 }
 
-.chair_code p{
-    text-align: right;
+.food_name, .food_cant ,.food_cost, .food_points, .ticket_name, .ticket_numbner, .ticket_points, .ticket_cost{
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    vertical-align: middle;
 }
+
 
 .total_title{
     display: inline-block;

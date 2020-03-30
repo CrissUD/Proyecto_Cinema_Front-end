@@ -114,10 +114,14 @@
     transition: all 0.8s;
 }
 
+.tickets_total{
+    height: 400px;
+}
+
 .chair_content_total{
     margin: 0 63px;
     overflow: hidden;
-    max-height: 200px;
+    max-height: 300px;
     border: 2px solid #71a0da;
     border-top: none;
     border-bottom-left-radius: 20px;
@@ -138,6 +142,10 @@
 .chair_num_chose{
     width: 25%;
     display: inline-block;
+}
+
+chair_num_chose2{
+    display: block;
 }
 
 .tickets_content input{

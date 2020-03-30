@@ -6,7 +6,7 @@ export default class Horario extends Component {
     movePanelConfirmation = () =>{
         this.props.panel.current.classList.toggle('active');
         this.props.panelBackground.current.classList.toggle('active');
-        this.props.recibirHoraTeatro(this.props.hora, this.props.teatro, this.props.proyeccion)
+        this.props.recibirHoraTeatro(this.props.hora, this.props.teatro, this.props.proyeccion, this.props.idFuncion, this.props.idSala, this.props.numSala, this.props.fun_sala)
     }
 
     render() {
