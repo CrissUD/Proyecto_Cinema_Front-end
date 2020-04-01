@@ -32,6 +32,8 @@ export default class Login extends Component {
                 .then(response => { 
                     this.setState({cliente: response.data})
                     this.props.enviarDatos(this.state.persona, this.state.cliente, this.state.authtoken)
+                    document.getElementById("nom").value=""
+                    document.getElementById("pass").value=""
                 })
                 .catch(error => {
                     alert(error.response.data.message)
@@ -60,10 +62,10 @@ export default class Login extends Component {
                     <form className="formulario">
                         <h1>Login</h1>
                         <div className="texto">
-                            <input type="text" name="user" placeholder="Nombre Usuario" onChange={this.onChange}/>
+                            <input id="nom" type="text" name="user" placeholder="Nombre Usuario" onChange={this.onChange}/>
                         </div>
                         <div className="texto">
-                            <input type="password" name="password" placeholder="contraseña" onChange={this.onChange}/>
+                            <input id="pass" type="password" name="password" placeholder="contraseña" onChange={this.onChange}/>
                         </div>
                         <div>
                             <select className="tipo_usuario">

@@ -33,6 +33,7 @@ export default class TarjetaCredito extends Component {
         console.log("expiry => ", this.state.expiry)
         console.log("cvc => ", this.state.cvc)
         console.log(JSON.stringify(this.state))
+        alert('Tarjeta registrada')
     }
 
     render () {

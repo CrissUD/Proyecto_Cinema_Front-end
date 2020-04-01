@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import './ResumenCompra.css';
 
 export default class ResumenCompra extends Component {
+
+    confirmarReserva= () =>{
+        this.props.confirmarReserva()
+    }
+
     render() {
         return (
             <div className="content">
@@ -207,7 +212,7 @@ export default class ResumenCompra extends Component {
                         </div> 
                     </div>
                     <div className="button_sumary_confirm">
-                        <Link className="button_sumary_confirm_link" to="/FacturarCompra">
+                        <Link className="button_sumary_confirm_link" to="/Inicio" onClick={this.confirmarReserva}>
                             <button  className="btn_sumary_confirm">
                                 Confirmar
                             </button>

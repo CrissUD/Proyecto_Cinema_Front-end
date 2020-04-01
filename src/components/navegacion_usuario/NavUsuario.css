@@ -49,7 +49,7 @@
 }
 
 #sidebar ul{
-    margin-top: 50px;
+    margin-top: 30px;
     margin-right: 20px;
     text-align: justify;
     text-justify: inter-word;
@@ -59,7 +59,7 @@
 #sidebar li{
     list-style: none;
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 .btn_menu_user{
@@ -68,11 +68,19 @@
     font-family:  -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     vertical-align: middle;
     font-size: 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .btn_menu_user:hover{
     color: rgba(0,0,0,0.5);
     filter: brightness(0.25);
+}
+
+.btn_menu_user:focus{
+    outline-style: none;
 }
 
 .img_btn{

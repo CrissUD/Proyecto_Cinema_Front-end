@@ -8,6 +8,10 @@ export default class NavUsuario extends Component {
         document.getElementById('sidebar').classList.toggle('active');
     }
 
+    cerrarSesion = () =>{
+        this.props.cerrarSecion()
+    }
+
     render() {
         return (
             <div id="sidebar">
@@ -18,7 +22,7 @@ export default class NavUsuario extends Component {
                     <h3>{this.props.persona.data.v_primernombre + " " + this.props.persona.data.v_primerapellido}</h3>
                     <img className="img_user" src={this.props.persona.data.v_foto} alt="user_img"/>
                     <p>
-                        Nada complementa una experiencia en el cine como unas crispetas saladas jueputa vida.
+                        Nada complementa una experiencia en el cine como una comida como compañia mientras ves peliculas.
                     </p>
                 </div>
                 <ul>
@@ -45,6 +49,12 @@ export default class NavUsuario extends Component {
                             <img className="img_btn" src={require("../../resources/img/historial.png")} alt="historial"/>
                             Historial
                         </Link>
+                    </li>
+                    <li>
+                        <button className="btn_menu_user" onClick={this.cerrarSesion}>
+                            <img className="img_btn" src={require("../../resources/img/salir.png")} alt="historial"/>
+                            Cerrar Sesion
+                        </button>
                     </li>
                 </ul>
             </div>

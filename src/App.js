@@ -149,11 +149,79 @@ class App extends Component {
     })
   }
 
+  confirmarReserva = async () => {
+    axios.post('http://localhost:8888/reserva/reserva/', 
+      {
+        fk_reserva: this.state.objReserva.reserva.id,
+        pk_numero_identificacion: this.state.persona.data.pk_numero_identificacion
+      },
+      { 
+        headers: { authtoken: this.state.authtoken } 
+      })
+    .then(response => { 
+      if(response.data.message=== "confirmado"){
+        alert("reserva confirmada")
+        this.state.objSillas.sSeleccionadas.map(silla =>{
+          axios.post('http://localhost:8888/reserva/sreserva/', 
+          {
+            fk_silla: silla.id,
+            fk_reserva: this.state.objReserva.reserva.id
+          },
+          { 
+            headers: { authtoken: this.state.authtoken } 
+          })
+          .then(response => { 
+            if(response.data.message=== "confirmado"){
+              alert("silla reserva confirmada")
+            }
+          })
+          .catch(error => {
+            alert("error.response.data.message")
+          });
+          return null
+        })
+        this.state.objSnacks.snaksSeleccionados.map(snack =>{
+          if(snack.numero > 0){
+            axios.post('http://localhost:8888/snack/snack/', 
+            {
+              id: snack.id,
+              i_cantidad: snack.numero
+            })
+            .then(response => { 
+              if(response.data.message=== "confirmado"){
+                alert("snack reserva confirmada")
+              }
+            })
+            .catch(error => {
+              alert("error.response.data.message")
+            });
+          }
+          return null
+        })
+      }
+      else{
+        alert("el tiempo de reserva expiro")
+      }
+    })
+    .catch(error => {
+      alert("error.response.data.message")
+    });
+  }
+
+  cerrarSecion = async () => {
+    await this.setState({
+      login: false,
+      persona: {},
+      cliente: {},
+      authtoken:{}, 
+    })
+  }
+
   render(){
     return (
       <div className="App">
         <Router>
-          {this.state.login ? (<NavUsuario persona={this.state.persona} />): (<div/>)}
+          {this.state.login ? (<NavUsuario persona={this.state.persona} cerrarSecion={this.cerrarSecion}/>): (<div/>)}
           <Route exact path='/' render={ () => {
             return (
               <div>
@@ -319,6 +387,7 @@ class App extends Component {
                     objSillas = {this.state.objSillas}
                     persona = {this.state.persona}
                     pelicula = {this.state.pelicula}
+                    confirmarReserva = {this.confirmarReserva}
                   />): 
                   (<div/>)
                 }
